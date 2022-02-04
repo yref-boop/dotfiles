@@ -1,0 +1,513 @@
+[colors]
+background = #202020
+foreground = #e3eaf3
+
+primary = #02c084
+secondary = #65a2d9
+tertiary = #d07ef2
+fourth = #e5c246
+
+alert = #eda240
+
+bg = #202020
+bg-alt = #20212C
+fg = #A0A0AB
+fg-alt = #5D5E72
+
+blue = #6BA2FF
+cyan = #45FFFF
+green = #96F7C8
+orange = #FFBA63
+pink = #FF6B9D
+purple = #E66AFC
+red = #FF7575
+yellow = #FFFF39
+
+trans = #00000000
+semi-trans-black = #cc000000
+
+shade-1 = #5D5E72
+shade-2 = #7A7B8C
+shade-3 = #A0A0AB
+shade-4 = #CACACE
+shade-5 = #F8F8F8
+
+[bar/mod]
+override-redirect = true
+wm-restack = i3
+bottom = false
+fixed-center = true
+height = 38
+
+;offset-x = 25
+offset-y = 10
+radius = 16px
+
+border-size = 0px
+border-color = #000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 1
+module-margin-right = 1
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+;name of fonts is system-dependent:
+font-0 = Hack Nerd Font:pixelsize=12:antialias=true;2.5
+font-1 = Hack Nerd Font:style=Regular:pixelsize=17:antialias=true;3
+font-2 = Hack Nerd Font:style=Regular:pixelsize=22:antialias=true;3
+font-3 = FontAwesome:style=Solid:size=13;2
+font-4 = FontAwesome:style=Regular:size=13;2
+font-5 = FontAwesome:style=Regular:size=13;2
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/first]
+inherit = bar/mod
+offset-x = 10
+width = 7%
+background = ${colors.bg}
+modules-center = timer
+
+[bar/second]
+inherit = bar/mod
+width = 7%
+background = ${colors.bg}
+offset-x = 50%
+modules-center = wireless-network
+
+[bar/third]
+width = 18%
+inherit =bar/mod
+offset-x = 510
+modules-left = i3
+background = ${colors.bg}
+
+[bar/fourth]
+inherit = bar/mod
+width = 18%
+background = ${colors.bg}
+offset-x = 155
+modules-center = wireless-network
+
+[bar/fifth]
+inherit = bar/mod
+width = 14%
+background = ${colors.bg}
+offset-x = 83%
+modules-center = battery temperature memory
+
+[bar/sixth]
+inherit = bar/mod
+width = 25%
+background = ${colors.bg}
+offset-x = 57.5%
+modules-center = margin date wlan audio margin
+
+[bar/seven]
+inherit = bar/mod
+width = 2%
+background = ${colors.bg}
+offset-x = 97.4%
+modules-center = powermenu
+
+[module/search]
+
+type = custom/script
+
+exec = echo "%{T2}גּ%{T-}"
+click-left = ~/scripts/launcher.sh
+
+[module/screenshot]
+
+;[module/xwindow]
+;type = internal/xwindow
+;label = %title:0:25:...%
+;label-empty = "@Arch"
+
+[module/win]
+type = custom/script
+
+;tail = true
+interval = 0
+exec = ~/scripts/activewin.sh
+
+[module/margin]
+type = custom/text
+
+content = " "
+content-foreground = ${colors.trans}
+
+[module/i3]
+
+type = internal/i3
+
+; Only show workspaces defined on the same output as the bar
+; Useful if you want to show monitor specific workspaces
+; on different bars
+; Default: false
+
+pin-workspaces = true
+
+; This will split the workspace name on ':'
+; Default: false
+
+strip-wsnumbers = true
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+; Default: false
+
+index-sort = true
+
+; Create click handler used to focus workspace
+; Default: true
+
+enable-click = false
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+
+enable-scroll = false
+
+; Wrap around when reaching the first/last workspace
+; Default: true
+
+wrapping-scroll = false
+
+; Set the scroll cycle direction
+; Default: true
+
+reverse-scroll = false
+
+; Use fuzzy (partial) matching on labels when assigning
+
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces
+
+; containing 'code' in the label
+; Default: false
+
+fuzzy-match = true
+
+; ws-icon-[0-9]+ = <label>;<icon>
+
+; NOTE: The <label> needs to match the name of the i3 workspace
+; Neither <label> nor <icon> can contain a semicolon (;)
+
+ws-icon-0 = 1;♚
+ws-icon-1 = 2;♛
+ws-icon-2 = 3;♜
+ws-icon-3 = 4;♝
+ws-icon-4 = 5;♞
+ws-icon-default = ♟
+
+; NOTE: You cannot skip icons, e.g. to get a ws-icon-6
+
+; you must also define a ws-icon-5.
+
+; NOTE: Icon will be available as the %icon% token inside label-*
+
+; Available tags:
+; <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+; <label-mode> (default)
+
+format = <label-state> <label-mode>
+
+; Available tokens:
+; %mode%
+; Default: %mode%
+
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = #e60053
+
+; Available tokens:
+; %name%
+; %icon%
+; %index%
+; %output%
+; Default: %icon% %name%
+
+label-focused = %index%
+label-focused-foreground = #ffffff
+label-focused-background = #3f3f3f
+label-focused-underline = #fba922
+label-focused-padding = 4
+
+; Available tokens:
+; %name%
+; %icon%
+; %index%
+; %output%
+; Default: %icon% %name%
+
+label-unfocused = %index%
+label-unfocused-padding = 4
+
+; Available tokens:
+; %name%
+; %icon%
+; %index%
+; %output%
+; Default: %icon% %name%
+
+label-visible = %index%
+label-visible-underline = #555555
+label-visible-padding = 4
+
+; Available tokens:
+; %name%
+; %icon%
+; %index%
+; %output%
+; Default: %icon% %name%
+
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 4
+; Separator in between workspaces
+
+label-separator = |
+label-separator-padding = 2
+label-separator-foreground = #ffb52a
+
+[module/temperature]
+
+type = internal/temperature
+
+thermal-zone = 0
+warn-temperature = 77
+
+format = <ramp> <label>
+format-underline = #f50a4d
+format-warn = <ramp> <label-warn>
+label = %temperature-c%
+label-warn = CPU:%temperature-c%
+
+label-warn-foreground = ${colors.secondary}
+ramp-0 =
+ramp-1 =
+ramp-2 =
+ramp-3 =
+ramp-4 =
+ramp-foreground =${colors.foreground}
+
+
+[module/memory]
+
+type = internal/memory
+interval = 3
+label =  %mb_used%
+
+[module/wlan]
+
+type = internal/network
+
+interface = wlp2s0
+interval = 3.0
+;format-connected = "<ramp-signal> <label-connected>"
+format-connected = <label-connected>
+;format-packetloss = <animation-packetloss>
+;label-connected = %signal%% 直 %upspeed:2%  %downspeed:2%
+label-connected = 直 %upspeed:2% ﰵ %downspeed:2% ﰬ
+format-connected-underline = #9f78e1
+label-connected-foreground = ${colors.primary}
+
+format-disconnected = <label-disconnected>
+format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = 睊
+label-disconnected-foreground = ${colors.alert}
+
+;ramp-signal-0 = ▂
+;ramp-signal-0-foreground = #F03051
+;ramp-signal-1 = ▃
+;ramp-signal-1-foreground = #F07127
+;ramp-signal-2 = ▄
+;ramp-signal-2-foreground = #F9CE56
+;ramp-signal-3 = ▅
+;ramp-signal-3-foreground = ${colors.purple}
+;ramp-signal-4 = ▆
+;ramp-signal-4-foreground = ${colors.purple}
+;ramp-signal-5 = █
+;ramp-signal-5-foreground = ${colors.purple}
+;animation-packetloss-0 = ⚠
+;animation-packetloss-0-foreground = #ffa64c
+;animation-packetloss-1 =
+;animation-packetloss-1-foreground = #000000
+;animation-packetloss-framerate = 500
+
+[module/timer]
+
+type = custom/script
+exec = ~/scripts/polybar-timer.sh tail '%{T2}祥%{T-}' 5
+tail = true
+
+click-left = ~/scripts/polybar-timer.sh new 25 '羽' 'ﲊ' 'notify-send "Session finished"' ; /path/to/polybar-timer.sh update %pid%
+click-middle = ~/scripts/polybar-timer.sh cancel ; /path/to/polybar-timer.sh update %pid%
+click-right = ~/scripts/polybar-timer.sh togglepause ; /path/to/polybar-timer.sh update %pid%
+scroll-up = ~/scripts/polybar-timer.sh increase 60 || ~/scripts/polybar-timer.sh new 1 '羽' 'ﮫ' 'notify-send -u critical "Timer expired."' ; /path/to/polybar-timer.sh update %pid%
+scroll-down = ~/scripts/polybar-timer.sh increase -60 ; /path/to/polybar-timer.sh update %pid%
+
+[module/date]
+
+type = custom/script
+exec = date '+%a,%e %b, %I:%M %p'
+
+interval = 60
+click-left = ~/scripts/calendar.sh
+format-prefix = " "
+format = <label>
+;format-background = #EAEAEA
+format-foreground = #CAF1DE
+
+;format-padding = 2
+; Available tokens:
+; %output%
+; Default: %output%
+label = %output%
+
+[module/audio]
+
+type = internal/pulseaudio
+format-volume = <ramp-volume>
+label-volume-foreground = ${colors.secondary}
+ramp-volume-foreground = ${colors.secondary}
+label-volume =
+
+ramp-volume-0 =
+ramp-volume-1 =
+ramp-volume-2 =
+
+label-muted = ﱝ
+label-muted-foreground = ${colors.secondary}
+click-right = pavucontrol
+
+[module/battery]
+
+type = internal/battery
+;$ ls -1 /sys/class/power_supply
+battery = BAT0
+adapter = AC0
+full-at = 100
+poll--interval = 5
+
+format-charging = <animation-charging> <label-charging>
+label-charging = %percentage%%
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%%
+format-full-prefix = " "
+
+ramp-capacity-0 =
+ramp-capacity-1 =
+ramp-capacity-2 =
+ramp-capacity-3 =
+ramp-capacity-4 =
+
+animation-charging-0 =
+animation-charging-1 =
+animation-charging-2 =
+animation-charging-3 =
+animation-charging-4 =
+animation-charging-framerate = 750
+
+[module/volume]
+
+;https://github.com/jaagr/polybar/wiki/Module:-volume
+
+type = internal/alsa
+format-volume = "<label-volume> <bar-volume>"
+format-volume-underline = ${colors.foreground-alt}
+master-mixer = Master
+label-volume = ""
+label-volume-foreground = ${colors.foreground}
+label-muted = muted
+
+bar-volume-width = 3
+
+bar-volume-foreground-0 = ${colors.third}
+bar-volume-foreground-1 = ${colors.third}
+bar-volume-foreground-2 = ${colors.third}
+bar-volume-foreground-3 = ${colors.third}
+bar-volume-foreground-4 = ${colors.third}
+bar-volume-foreground-5 = ${colors.third}
+bar-volume-foreground-6 = ${colors.third}
+
+bar-volume-gradient = false
+bar-volume-indicator =
+bar-volume-indicator-font = 2
+bar-volume-fill = ━
+bar-volume-fill-font = 2
+bar-volume-empty = ━
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground}
+
+format-volume-foreground = ${colors.foreground}
+format-volume-background = ${colors.background}
+
+format-muted-prefix = "  "
+format-muted-prefix-foreground = "#ff0000"
+format-muted-foreground = ${colors.foreground}
+format-muted-background = ${colors.background}
+
+[module/wireless-network]
+;https://github.com/jaagr/polybar/wiki/Module:-network
+
+type = internal/network
+interface = wlp13s0
+interval = 3.0
+label-connected = %essid%
+
+format-connected = <label-connected>
+;format-connected = <ramp-signal> <label-connected>
+format-connected-foreground = ${colors.foreground}
+format-connected-background = ${colors.background}
+format-connected-prefix = "  "
+format-connected-prefix-foreground = #7e52c6
+format-connected-prefix-background = ${colors.background}
+format-connected-underline = #7e52c6
+
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.alert}
+label-disconnected-background = ${colors.background}
+
+format-disconnected = <label-disconnected>
+format-disconnected-foreground = ${colors.alert}
+format-disconnected-background = ${colors.background}
+format-disconnected-prefix = "  "
+format-disconnected-prefix-foreground = ${colors.alert}
+format-disconnected-prefix-background = ${colors.background}
+format-disconnected-underline =${colors.alert}
+ramp-signal-0 = ▁
+ramp-signal-1 = ▂
+ramp-signal-2 = ▃
+ramp-signal-3 = ▄
+ramp-signal-4 = ▅
+ramp-signal-5 = ▆
+ramp-signal-6 = ▇
+ramp-signal-7 = █
+ramp-signal-foreground = #7e52c6
+
+[module/powermenu]
+type = custom/text
+format-spacing = 1
+content = "%{T2} "
+content-foreground = ${colors.alert}
+click-left = ~/scripts/powermenu.sh &
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+pseudo-transparency =true
+
+[global/wm]
+margin-bottom = 20r
