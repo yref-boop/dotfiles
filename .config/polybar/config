@@ -71,7 +71,7 @@ inherit = bar/mod
 offset-x = 10
 width = 7%
 background = ${colors.bg}
-modules-center = timer
+modules-center = wireless-network battery
 
 [bar/second]
 inherit = bar/mod
@@ -291,11 +291,11 @@ label = %temperature-c%
 label-warn = CPU:%temperature-c%
 
 label-warn-foreground = ${colors.secondary}
-ramp-0 =
-ramp-1 =
-ramp-2 =
-ramp-3 =
-ramp-4 =
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
 ramp-foreground =${colors.foreground}
 
 
@@ -342,17 +342,6 @@ label-disconnected-foreground = ${colors.alert}
 ;animation-packetloss-1-foreground = #000000
 ;animation-packetloss-framerate = 500
 
-[module/timer]
-
-type = custom/script
-exec = ~/scripts/polybar-timer.sh tail '%{T2}祥%{T-}' 5
-tail = true
-
-click-left = ~/scripts/polybar-timer.sh new 25 '羽' 'ﲊ' 'notify-send "Session finished"' ; /path/to/polybar-timer.sh update %pid%
-click-middle = ~/scripts/polybar-timer.sh cancel ; /path/to/polybar-timer.sh update %pid%
-click-right = ~/scripts/polybar-timer.sh togglepause ; /path/to/polybar-timer.sh update %pid%
-scroll-up = ~/scripts/polybar-timer.sh increase 60 || ~/scripts/polybar-timer.sh new 1 '羽' 'ﮫ' 'notify-send -u critical "Timer expired."' ; /path/to/polybar-timer.sh update %pid%
-scroll-down = ~/scripts/polybar-timer.sh increase -60 ; /path/to/polybar-timer.sh update %pid%
 
 [module/date]
 
@@ -372,6 +361,7 @@ format-foreground = #CAF1DE
 ; Default: %output%
 label = %output%
 
+
 [module/audio]
 
 type = internal/pulseaudio
@@ -380,13 +370,14 @@ label-volume-foreground = ${colors.secondary}
 ramp-volume-foreground = ${colors.secondary}
 label-volume =
 
-ramp-volume-0 =
-ramp-volume-1 =
-ramp-volume-2 =
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
-label-muted = ﱝ
+label-muted = 
 label-muted-foreground = ${colors.secondary}
 click-right = pavucontrol
+
 
 [module/battery]
 
@@ -404,18 +395,19 @@ format-discharging = <ramp-capacity> <label-discharging>
 label-discharging = %percentage%%
 format-full-prefix = " "
 
-ramp-capacity-0 =
-ramp-capacity-1 =
-ramp-capacity-2 =
-ramp-capacity-3 =
-ramp-capacity-4 =
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 
-animation-charging-0 =
-animation-charging-1 =
-animation-charging-2 =
-animation-charging-3 =
-animation-charging-4 =
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
 animation-charging-framerate = 750
+
 
 [module/volume]
 
@@ -456,11 +448,12 @@ format-muted-prefix-foreground = "#ff0000"
 format-muted-foreground = ${colors.foreground}
 format-muted-background = ${colors.background}
 
+
 [module/wireless-network]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 
 type = internal/network
-interface = wlp13s0
+interface = wlp2s0
 interval = 3.0
 label-connected = %essid%
 
@@ -494,12 +487,14 @@ ramp-signal-6 = ▇
 ramp-signal-7 = █
 ramp-signal-foreground = #7e52c6
 
+
 [module/powermenu]
 type = custom/text
 format-spacing = 1
 content = "%{T2} "
 content-foreground = ${colors.alert}
 click-left = ~/scripts/powermenu.sh &
+
 
 [settings]
 screenchange-reload = true
@@ -508,6 +503,7 @@ screenchange-reload = true
 ;compositing-foreground = source
 ;compositing-border = over
 pseudo-transparency =true
+
 
 [global/wm]
 margin-bottom = 20r
