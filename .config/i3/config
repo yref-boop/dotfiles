@@ -205,7 +205,8 @@ exec picom --experimental-backends
 # polybar
 exec_always --no-startup-id $HOME/scripts/launch.sh
 
+# dunst
+exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
+
 # You can also use any non-zero value if you'd like to have a border
 for_window [class=".*"] border pixel 0
-
-
