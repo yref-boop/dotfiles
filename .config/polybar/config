@@ -7,7 +7,7 @@ secondary = #65a2d9
 tertiary = #d07ef2
 fourth = #e5c246
 
-alert = #eda240
+alert = #dea181
 
 bg = #202020
 bg-alt = #20212C
@@ -66,6 +66,12 @@ font-5 = FontAwesome:style=Regular:size=13;2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+[bar/zero]
+inherit = bar/mod
+offset-x = 0
+width = 10%
+background = ${colors.bg}
+modules-center = audio
 [bar/first]
 inherit = bar/mod
 offset-x = 10
@@ -75,21 +81,21 @@ modules-center = mic-volume audio
 
 [bar/second]
 inherit = bar/mod
-width = 7%
+width = 11%
 background = ${colors.bg}
-offset-x = 50%
-modules-center = wireless-network
+offset-x = 56%
+modules-center = date
 
 [bar/third]
-width = 18%
+width = 10%
 inherit =bar/mod
-offset-x = 510
-modules-left = wireless-network
+offset-x = 600
+modules-left = margin backlight
 background = ${colors.bg}
 
 [bar/fourth]
 inherit = bar/mod
-width = 18%
+width = 22%
 background = ${colors.bg}
 offset-x = 155
 modules-left = i3
@@ -103,10 +109,10 @@ modules-center = battery temperature memory
 
 [bar/sixth]
 inherit = bar/mod
-width = 25%
+width = 15%
 background = ${colors.bg}
-offset-x = 57.5%
-modules-center = margin date wlan margin
+offset-x = 67.5%
+modules-center = wlan
 
 [bar/seven]
 inherit = bar/mod
@@ -162,7 +168,7 @@ strip-wsnumbers = true
 ; sorting that groups the workspaces by output
 ; Default: false
 
-index-sort = true
+index-sort = false
 
 ; Create click handler used to focus workspace
 ; Default: true
@@ -199,12 +205,12 @@ fuzzy-match = true
 ; NOTE: The <label> needs to match the name of the i3 workspace
 ; Neither <label> nor <icon> can contain a semicolon (;)
 
-ws-icon-0 = 1;♚
-ws-icon-1 = 2;♛
-ws-icon-2 = 3;♜
-ws-icon-3 = 4;♝
-ws-icon-4 = 5;♞
-ws-icon-default = ♟
+ws0-icon-0 = 1;♚
+ws1-icon-1 = 2;♛
+ws2-icon-2 = 3;♜
+ws3-icon-3 = 4;♝
+ws4-icon-4 = 5;♞
+ws5-icon-default = ♟
 
 ; NOTE: You cannot skip icons, e.g. to get a ws-icon-6
 
@@ -269,7 +275,7 @@ label-visible-padding = 4
 
 label-urgent = %index%
 label-urgent-foreground = #000000
-label-urgent-background = #bd2c40
+label-urgent-background = #d6b69f
 label-urgent-padding = 4
 ; Separator in between workspaces
 
@@ -304,7 +310,7 @@ ramp-foreground =${colors.foreground}
 
 type = internal/memory
 interval = 3
-label =  %mb_used%
+label =   %mb_used%
 
 
 [module/wlan]
@@ -378,12 +384,12 @@ label-disconnected-foreground = #66ffffff
 ;label-packetloss-foreground = #eefafafa
 
 ; Only applies if <ramp-signal> is used
-ramp-signal-0 = 😱
-ramp-signal-1 = 😠
-ramp-signal-2 = 😒
-ramp-signal-3 = 😊
-ramp-signal-4 = 😃
-ramp-signal-5 = 😈
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-5 = 
 
 ; Only applies if <animation-packetloss> is used
 animation-packetloss-0 = ⚠
@@ -393,12 +399,13 @@ animation-packetloss-1-foreground = #000000
 ; Framerate in milliseconds
 animation-packetloss-framerate = 500
 
+
 [module/date]
 
 type = custom/script
 exec = date '+%a,%e %b, %I:%M %p'
 
-interval = 60
+interval = 30
 click-left = ~/scripts/calendar.sh
 format-prefix = " "
 format = <label>
@@ -443,7 +450,7 @@ label-charging = %percentage%%
 
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging = %percentage%%
-format-full-prefix = " "
+format-full-prefix = " "
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -499,45 +506,6 @@ format-muted-foreground = ${colors.foreground}
 format-muted-background = ${colors.background}
 
 
-[module/wireless-network]
-;https://github.com/jaagr/polybar/wiki/Module:-network
-
-type = internal/network
-interface = wlp2s0
-interval = 3.0
-label-connected = %essid%
-
-format-connected = <label-connected>
-;format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = ${colors.foreground}
-format-connected-background = ${colors.background}
-format-connected-prefix = "  "
-format-connected-prefix-foreground = #7e52c6
-format-connected-prefix-background = ${colors.background}
-format-connected-underline = #7e52c6
-
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.alert}
-label-disconnected-background = ${colors.background}
-
-format-disconnected = <label-disconnected>
-format-disconnected-foreground = ${colors.alert}
-format-disconnected-background = ${colors.background}
-format-disconnected-prefix = "  "
-format-disconnected-prefix-foreground = ${colors.alert}
-format-disconnected-prefix-background = ${colors.background}
-format-disconnected-underline =${colors.alert}
-ramp-signal-0 = ▁
-ramp-signal-1 = ▂
-ramp-signal-2 = ▃
-ramp-signal-3 = ▄
-ramp-signal-4 = ▅
-ramp-signal-5 = ▆
-ramp-signal-6 = ▇
-ramp-signal-7 = █
-ramp-signal-foreground = #7e52c6
-
-
 [module/powermenu]
 type = custom/text
 format-spacing = 1
@@ -549,7 +517,7 @@ click-left = ~/scripts/powermenu.sh &
 [module/mic-volume]
 type = custom/script
 interval = 1
-format = Mic: <label>
+format =  : <label>
 exec = bash ~/scripts/mic-volume.sh show-vol
 
 ; Control actions (using pactl)
@@ -557,6 +525,54 @@ click-left = bash ~/scripts/mic-volume.sh  mute-vol
 scroll-up = bash ~/scripts/mic-volume.sh  inc-vol
 scroll-down = bash ~/scripts/mic-volume.sh  dec-vol
 
+
+[module/backlight]
+type = internal/backlight
+
+; Use the following command to list available cards:
+; $ ls -1 /sys/class/backlight/
+card = amdgpu_bl0
+
+; (unreleased)
+; Use the `/sys/class/backlight/actual-brightness` file
+; rather than the regular `brightness` file.
+; Defaults to true unless the specified card is an amdgpu backlight.
+use-actual-brightness = true
+
+; Enable changing the backlight with the scroll wheel
+; NOTE: This may require additional configuration on some systems. Polybar will
+; write to `/sys/class/backlight/${self.card}/brightness` which requires polybar
+; to have write access to that file.
+; DO NOT RUN POLYBAR AS ROOT. 
+; The recommended way is to add the user to the
+; `video` group and give that group write-privileges for the `brightness` file.
+; See the ArchWiki for more information:
+; https://wiki.archlinux.org/index.php/Backlight#ACPI
+; Default: false
+enable-scroll = true
+
+; Available tags:
+;   <label> (default)
+;   <ramp>
+;   <bar>
+format = <bar> <label>
+
+; Available tokens:
+;   %percentage% (default)
+label = %percentage%%
+
+; Only applies if <ramp> is used
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+
+; Only applies if <bar> is used
+bar-width = 10
+bar-indicator = |
+bar-fill = ─
+bar-empty = ─
 
 [settings]
 screenchange-reload = true
