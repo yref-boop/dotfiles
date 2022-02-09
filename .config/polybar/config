@@ -68,18 +68,19 @@ cursor-scroll = ns-resize
 
 [bar/zero]
 inherit = bar/mod
-offset-x = 0
-width = 10%
+offset-x = 10
+width = 2%
 background = ${colors.bg}
 modules-center = audio
-[bar/first]
+
+[bar/second]
 inherit = bar/mod
-offset-x = 10
-width = 7%
+offset-x = 410
+width = 12%
 background = ${colors.bg}
 modules-center = mic-volume audio
 
-[bar/second]
+[bar/fourth]
 inherit = bar/mod
 width = 11%
 background = ${colors.bg}
@@ -89,32 +90,32 @@ modules-center = date
 [bar/third]
 width = 10%
 inherit =bar/mod
-offset-x = 600
+offset-x = 650
 modules-left = margin backlight
 background = ${colors.bg}
 
-[bar/fourth]
+[bar/first]
 inherit = bar/mod
-width = 22%
+width = 17.6%
 background = ${colors.bg}
-offset-x = 155
+offset-x = 60
 modules-left = i3
 
-[bar/fifth]
+[bar/sixth]
 inherit = bar/mod
 width = 14%
 background = ${colors.bg}
 offset-x = 83%
 modules-center = battery temperature memory
 
-[bar/sixth]
+[bar/fifth]
 inherit = bar/mod
 width = 15%
 background = ${colors.bg}
 offset-x = 67.5%
 modules-center = wlan
 
-[bar/seven]
+[bar/seventh]
 inherit = bar/mod
 width = 2%
 background = ${colors.bg}
