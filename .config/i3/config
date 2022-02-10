@@ -189,11 +189,11 @@ bindsym $mod+r mode "resize"
 # keyboard
 exec setxkbmap es
 
+# maim screenshot
+bindsym $mod+x exec maim -s -u | xclip -selection clipboard -t image/png -i
+
 # wallpaper
 exec nitrogen --restore
-
-# lockscreen
-bindsym $mod+x exec i3lock -c 000000
 
 # gaps
 gaps inner 10
