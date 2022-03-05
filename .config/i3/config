@@ -185,9 +185,14 @@ bindsym $mod+r mode "resize"
 #    i3bar_command i3bar
 #}
 
-
 # keyboard
 exec setxkbmap es
+bindsym XF86KbdBrightnessUp exec light -s sysfs/leds/asus::kbd_backlight -A 33.34
+bindsym XF86KbdBrightnessDown exec light -s sysfs/leds/asus::kbd_backlight -U 33.34
+
+#screen brightness
+bindsym XF86MonBrightnessUp exec light -A 2 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 2 # decrease screen brightness
 
 # maim screenshot
 bindsym $mod+x exec maim -s -u | xclip -selection clipboard -t image/png -i
