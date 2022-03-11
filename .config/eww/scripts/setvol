@@ -1,0 +1,6 @@
+#!/bin/sh
+
+NVOL=$(echo $1 | cut -d. -f1)
+echo $NVOL%
+$(pactl set-sink-volume @DEFAULT_SINK@ $NVOL%)
+
