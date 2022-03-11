@@ -24,22 +24,22 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = (100,300)
+    width = 300
 
     # The maximum height of a single notification, excluding the frame.
-    # height = 300
+    # height = 400
 
     # Position the notification in the top right corner
-    origin = top-right
+    origin = top-center
 
     # Offset from the origin
-    offset = 17x17
+    offset = 0x7
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
 
     # Maximum number of notification (0 means no limit)
-    notification_limit = 3
+    notification_limit = 2
 
     ### Progress bar ###
 
@@ -68,7 +68,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.). (X11 only)
-    transparency = 5
+    transparency = 0
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -86,10 +86,10 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 0
+    frame_width = 3
 
     # Defines color of the frame around the notification window.
-    frame_color = "#aaaaaa"
+    frame_color = "#ffb3f5"
 
     # Define a color for the separator.
     # possible values are:
@@ -97,7 +97,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = frame
+    separator_color = "#ffb3f5"
 
     # Sort messages by urgency.
     sort = yes
@@ -151,11 +151,11 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-     format = "%a</b>\n%s"
+     format = "<b>%s</b>\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = left
+    alignment = center
 
     # Vertical alignment of message text and icon.
     # Possible values are "top", "center" and "bottom".
