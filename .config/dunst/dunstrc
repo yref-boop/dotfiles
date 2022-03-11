@@ -24,7 +24,7 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 300
+    width = (100,300)
 
     # The maximum height of a single notification, excluding the frame.
     # height = 300
@@ -33,7 +33,7 @@
     origin = top-right
 
     # Offset from the origin
-    offset = 10x10
+    offset = 17x17
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -55,10 +55,10 @@
     progress_bar_frame_width = 0
 
     # Set the minimum width for the progress bar
-    progress_bar_min_width = 150
+    progress_bar_min_width = 200
 
     # Set the maximum width for the progress bar
-    progress_bar_max_width = 300
+    progress_bar_max_width = 200
 
 
     # Show how many messages are currently hidden (because of
@@ -68,12 +68,12 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.). (X11 only)
-    transparency = 20
+    transparency = 5
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 2
+    separator_height = 3
 
     # Padding between text and separator.
     padding = 8
@@ -82,7 +82,7 @@
     horizontal_padding = 8
 
     # Padding between text and icon.
-    text_icon_padding = 0
+    text_icon_padding = 5
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
@@ -111,7 +111,7 @@
 
     ### Text ###
 
-    font = "Source Code Pro 10"
+    font = "Source Code Pro Bold 10"
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -274,9 +274,9 @@
     # * context_all: Open context menu for all notifications.
     # These values can be strung together for each mouse event, and
     # will be executed in sequence.
-    mouse_left_click = close_current
-    mouse_middle_click = do_action, close_current
-    mouse_right_click = close_all
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.
