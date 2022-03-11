@@ -207,7 +207,8 @@ bindsym XF86Launch4 exec asusctl profile -n
 exec nitrogen --restore
 
 # gaps
-gaps inner 10 
+gaps inner 17 
+gaps left 65
 
 # picom
 exec picom 
@@ -216,10 +217,13 @@ exec picom
 exec asusctl profile -P Quiet
 
 # polybar
-exec_always --no-startup-id $HOME/scripts/launch.sh
+
 
 # dunst
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
+
+# eww
+exec_always --no-startup-id eww open bar
 
 # You can also use any non-zero value if you'd like to have a bor 
 for_window [class=".*"] border pixel 0
