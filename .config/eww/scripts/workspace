@@ -45,4 +45,7 @@ bspc subscribe desktop node_transfer | while read -r _ ; do
 workspaces
 done
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
