@@ -18,4 +18,3 @@ i have honestly gather code from a lot of sources and modified it to work on my 
 - for the bar, i recommend checking [txyhn's dotfiles](https://github.com/rxyhn/dotfiles)
 - for most of the themes (if not all u-u) i use [catppuccin](https://github.com/catppuccin/catppuccin)
 - for overall inspo, visit the [unixporn subreddit](https://www.reddit.com/r/unixporn/)
-
