@@ -200,7 +200,7 @@ gaps inner 10
 gaps top 50
 
 # picom
-exec picom --experimental-backends
+exec picom 
 
 # polybar
 exec_always --no-startup-id $HOME/scripts/launch.sh
