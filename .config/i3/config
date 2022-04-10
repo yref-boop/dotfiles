@@ -208,16 +208,13 @@ exec nitrogen --restore
 
 # gaps
 gaps inner 17 
-gaps left 65
+gaps right 65
 
 # picom
 exec picom 
 
 # asusctl
 exec asusctl profile -P Quiet
-
-# polybar
-
 
 # dunst
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
