@@ -29,8 +29,8 @@
 			:halign "end"		
 			:text battery	
 			:tooltip "Battery: ${battery-cappacity}%")))
-(defpoll battery			:interval "1s"	"scripts/battery icon")
-(defpoll battery-cappacity	:interval "1s"	"scripts/battery percent")
+(defpoll battery			:interval "1000s"	"scripts/battery icon")
+(defpoll battery-cappacity	:interval "60s"	"scripts/battery percent")
 
 ;; Wifi Widgets ;;
 (defwidget wifi []
@@ -38,8 +38,8 @@
 				:tooltip wifi-name
 	(button		:onclick "scripts/popup wifi" 
 				:class "wifi-icon" wifi-icon)))
-(defpoll wifi-icon :interval "1s" "scripts/wifi icon")
-(defpoll wifi-name :interval "1s" "scripts/wifi name")
+(defpoll wifi-icon :interval "10s" "scripts/wifi icon")
+(defpoll wifi-name :interval "100s" "scripts/wifi name")
 
 ;; Brightness Widgets ;;
 (defwidget bright []
@@ -84,7 +84,7 @@
 			  :onchange "scripts/setvol {}"))
 
 	(button   :onclick "scripts/popup audio"   :class "volume-icon" ""))))
-(defpoll current-volume :interval "1s" "scripts/pervol ")
+(defpoll current-volume :interval "5s" "scripts/pervol ")
 (defvar volum false)
 
 ;; Control Panel Widgets ;;	
@@ -106,8 +106,8 @@
 			:class "time-hour" hour)
 	(button	:onclick "scripts/popup calendar"
 			:class "time-min"  min)))
-(defpoll hour	:interval "1s"	"date '+%H'")
-(defpoll min	:interval "1s"	"date '+%M'")
+(defpoll hour	:interval "10000s"	"date '+%H'")
+(defpoll min	:interval "10s"	"date '+%M'")
 
 ;; Calendar Widgets ;;
 (defwidget cal []
