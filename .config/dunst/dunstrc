@@ -1,119 +1,89 @@
-# See dunst(5) for all configuration options
 
 [global]
+
     ### Display ###
 
-    # Which monitor should the notifications be displayed on.
+    # monitor for the notifications to be displayed on
     monitor = 0
 
-    # Display notification on focused monitor.  Possible modes are:
-    #   mouse: follow mouse pointer
-    #   keyboard: follow window with keyboard focus
-    #   none: don't follow anything
-    #
-    # "keyboard" needs a window manager that exports the
-    # _NET_ACTIVE_WINDOW property.
-    # This should be the case for almost all modern window managers.
-    #
-    # If this option is set to mouse or keyboard, the monitor option
-    # will be ignored.
+    # display notification on focused monitor by mouse
     follow = mouse
 
     ### Geometry ###
 
-    # dynamic width from 0 to 300
-    # width = (0, 300)
     # constant width of 300
     width = 300
 
     # The maximum height of a single notification, excluding the frame.
     # height = 400
 
-    # Position the notification in the top right corner
+    # position of the notification
     origin = top-center
 
-    # Offset from the origin
+    # offset from the origin
     offset = 0x7
 
-    # Scale factor. It is auto-detected if value is 0.
+    # scale factor (0 = autodetected)
     scale = 0
 
-    # Maximum number of notification (0 means no limit)
+    # maximum number of notifications
     notification_limit = 2
 
     ### Progress bar ###
 
-    # Turn on the progess bar. It appears when a progress hint is passed with
-    # for example dunstify -h int:value:12
+    # turn on the progess bar
     progress_bar = true
 
-    # Set the progress bar height. This includes the frame, so make sure
-    # it's at least twice as big as the frame width.
+    # progress bar height including the frame
     progress_bar_height = 10
 
-    # Set the frame width of the progress bar
+    # frame width of the progress bar
     progress_bar_frame_width = 0
 
-    # Set the minimum width for the progress bar
+    # minimum & maximum width for the progress bar
     progress_bar_min_width = 200
-
-    # Set the maximum width for the progress bar
-    progress_bar_max_width = 200
+	progress_bar_max_width = 200
 
 
-    # Show how many messages are currently hidden (because of
-    # notification_limit).
+    # show number of hidden messages
     indicate_hidden = yes
 
-    # The transparency of the window.  Range: [0; 100].
-    # This option will only work if a compositing window manager is
-    # present (e.g. xcompmgr, compiz, etc.). (X11 only)
-    transparency = 0
+    # transparency of the window.  Range: [0; 100].
+    transparency = 5
 
-    # Draw a line of "separator_height" pixel height between two
-    # notifications.
-    # Set to 0 to disable.
+    # draw a"separator_height" pixel height between two notifications
     separator_height = 3
 
-    # Padding between text and separator.
+    # padding between text and separator
     padding = 8
 
-    # Horizontal padding.
+    # horizontal padding
     horizontal_padding = 8
 
-    # Padding between text and icon.
+    # padding between text and icon
     text_icon_padding = 5
 
-    # Defines width in pixels of frame around the notification window.
-    # Set to 0 to disable.
+    # defines width in pixels of frame around the notification window
     frame_width = 3
 
-    # Defines color of the frame around the notification window.
+    # defines color of the frame around the notification windowd
     frame_color = "#ffb3f5"
 
-    # Define a color for the separator.
-    # possible values are:
-    #  * auto: dunst tries to find a color fitting to the background;
-    #  * foreground: use the same color as the foreground;
-    #  * frame: use the same color as the frame;
-    #  * anything else will be interpreted as a X color.
+    # define a color for the separator
     separator_color = "#ffb3f5"
 
     # Sort messages by urgency.
     sort = yes
 
-    # Don't remove messages, if the user is idle (no mouse or keyboard input)
-    # for longer than idle_threshold seconds.
-    # Set to 0 to disable.
-    # A client can set the 'transient' hint to bypass this. See the rules
-    # section for how to disable this if necessary
+    # don't remove messages, if the user is idle (no mouse or keyboard input)
+    # for longer than idle_threshold seconds
     idle_threshold = 1200
 
     ### Text ###
 
     font = "Source Code Pro Bold 10"
 
-    # The spacing between lines.  If the height is smaller than the
+    # The spacing between lines if smaller than the
     # font height, it will get raised to the font height.
     line_height = 0
 
