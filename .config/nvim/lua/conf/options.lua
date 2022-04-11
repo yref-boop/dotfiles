@@ -1,4 +1,3 @@
-
 o = vim.opt
 
 o.mouse = "a"					-- allow mouse interaction in nvim
@@ -12,3 +11,4 @@ o.ignorecase = true 			-- ignore case in search patterns
 vim.wo.fillchars='eob: '		-- change the ~ character to a space on non-written lines
 o.guifont = "monospace:h15"		-- font used in graphical applications
 
+o.termguicolors = true 			-- set terminal gui colors
