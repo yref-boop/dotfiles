@@ -4,6 +4,7 @@ o.mouse = "a"					-- allow mouse interaction in nvim
 o.tabstop = 4					-- set the number of spaces in a tab to 4
 o.smartindent = true			-- autoindent
 o.shiftwidth = 4				-- number of spaces by indentation
+o.breakindent = true			-- wrap lines mantain indentation
 
 o.clipboard = "unnamedplus"		-- allows neovim to access system clipboard
 o.ignorecase = true 			-- ignore case in search patterns

@@ -12,5 +12,8 @@ return packer.startup(function(use)
 	use "catppuccin/nvim"				-- catppuccin theme
 	use "norcalli/nvim-colorizer.lua"	-- shows hex color values
 	use "nvim-lualine/lualine.nvim"		-- bottom bar
-	--use "lervag/vimtex"				-- latex support for nvim
+			
+	use 'neovim/nvim-lspconfig'			-- language diagnostics
+	use 'williamboman/nvim-lsp-installer'
+	--use "lervag/vimtex"				-- latex integration
 end)
