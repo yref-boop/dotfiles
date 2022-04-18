@@ -36,19 +36,6 @@ $white: $foreground;
     padding: 1rem 0 1rem 0;
 }
 
-// Workspaces
-.works {
-font-family: "Font Awesome 6 Pro";
-padding: .2rem .7rem 0 .7rem;
-background-color: $black;
-border-radius: 5px;
-}
-
-.0 , .01, .02, .03, .04, .05, .06,
-.011, .022, .033, .044, .055, .066{
-  margin: .55rem 0 .55rem 0;
-}
-
 /* Unoccupied */
 .0 {
 color: $gray;

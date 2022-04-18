@@ -16,11 +16,6 @@
   	(button :class "launcher_icon" 
 		   	:onclick "scripts/popup launcher"  "")))
 
-;; Workspaces Widgets ;;
-(defwidget workspaces []
-	(literal :content workspace))
-(deflisten workspace "scripts/workspace")
-
 ;; Battery Widgets ;;
 (defwidget bat []
 	(box	:orientation "v"	
@@ -106,7 +101,7 @@
 			:class "time-hour" hour)
 	(button	:onclick "scripts/popup calendar"
 			:class "time-min"  min)))
-(defpoll hour	:interval "10000s"	"date '+%H'")
+(defpoll hour	:interval "10s"	"date '+%H'")
 (defpoll min	:interval "10s"	"date '+%M'")
 
 ;; Calendar Widgets ;;
@@ -161,8 +156,7 @@
 	(box	:orientation "v" 
 			:space-evenly "false" 
 			:valign "start" 
-(launcher)
-(workspaces)))
+(launcher)))
 
 ;; Bottom Widgets ;;
 (defwidget bottom []
