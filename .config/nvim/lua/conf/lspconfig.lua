@@ -1,5 +1,10 @@
 local lsp_installer = require("nvim-lsp-installer")
 
+require'lspconfig'.hls.setup{
+    single_file_support = true
+}
+
+
 -- Register a handler that will be called for each installed server when it's ready (i.e. when installation is finished
 -- or if the server is already installed).
 lsp_installer.on_server_ready(function(server)
