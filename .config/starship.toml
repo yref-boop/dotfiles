@@ -1,23 +1,27 @@
 # ~/.config/starship.toml
 
 format = """
-[█](#F5C2E7)\
+[█](#eba0ac)\
 $username\
-[](bg:#1A1826 fg:#F5C2E7)\
+[](bg:#1A1826 fg:#eba0ac)\
 $directory\
-[](fg:#1A1826 bg:#DDB6F2)\
+[](fg:#1A1826 bg:#f2cdcd)\
 $git_branch\
-[ ](fg:#DDB6F2)\
+[ ](fg:#f2cdcd)\
 """
 
 # Disable the blank line at the start of the prompt
 # add_newline = false
+ #eba0ac
+ #f2cdcd
+ #f5c2e7
 
+ #f2d0bf
 # You can also replace your username with a neat symbol like  to save some space
 [username]
 show_always = true
-style_user = "#1A1826 bg:#F5C2E7"
-style_root = "#1A1826 bg:#F5C2E7"
+style_user = "#1A1826 bg:#eba0ac"
+style_root = "#1A1826 bg:#eba0ac"
 format = '[$user ]($style)'
 
 [directory]
@@ -26,20 +30,14 @@ format = "[ $path ]($style)"
 truncation_length = 1
 truncation_symbol = ""
 
-[directory.substitutions]
-"Documents" = " "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
-
 [git_branch]
 symbol = ""
-style = "#1A1826 bg:#DDB6F2"
-format = '[[ $symbol $branch ](#1A1826 bg:#DDB6F2)]($style)'
+style = "#1A1826 bg:#f2cdcd"
+format = '[[ $symbol $branch ](#1A1826 bg:#f2cdcd)]($style)'
 
 [git_status]
-style = "#1A1826 bg:#DDB6F2"
-format = '[[($all_status$ahead_behind )](#1A1826 bg:#DDB6F2)]($style)'
+style = "#1A1826 bg:#f2cdcd"
+format = '[[($all_status$ahead_behind )](#1A1826 bg:#f2cdcd)]($style)'
 
 # wait 10 milliseconds for starship to check files under the current directory.
 scan_timeout = 10

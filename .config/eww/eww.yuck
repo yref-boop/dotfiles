@@ -73,7 +73,7 @@
 			  :value current-volume 
 			  :orientation "v" 
               :flipped true
-			  :tooltip "Volume: ${current-volume}%" 
+			  :tooltip "volume: ${current-volume}%" 
 			  :max 100
 			  :min 0
 			  :onchange "scripts/setvol {}"))
@@ -178,8 +178,8 @@
 (defwidget bar []
 	(box :class "eww_bar" 
 		 :orientation "v" 
-		 :vexpand "false" 
-		 :hexpand "false"
+		 :vexpand "true" 
+		 :hexpand "true"
 (top)
 (end)))
 
@@ -189,22 +189,22 @@
 ;; Bar Windows ;;
 (defwindow bar
 	:geometry (geometry :x "1855px" 
-						:y "15px" 
-						:height "1050" 
-						:width "47px")
+						:y "24px" 
+						:height "1032" 
+						:width "50px")
 	:monitor 0
 	:reserve (struts :distance "35px" 
 					 :side "left")
 	:wm-ignore "true"
-	:hexpand "false"
-	:vexpand "false"
+	:hexpand "true"
+	:vexpand "true"
     :windowtype "dock"
     :stacking "bg"
 (bar))
 
 ;; Calendar Windows ;;
 (defwindow calendar
-	:geometry (geometry :x "81px" 
+	:geometry (geometry :x "500px" 
 						:y "800px" 
 						:width "270px" 
 						:height "60px"
