@@ -85,7 +85,7 @@ i update this list when i remember to, so don't expect it to 100% represent my c
 - yay-git 11.2.0.r4.ge0006ec-1
 - zathura 0.4.9-1
 - zathura-pdf-mupdf 0.3.8-1
-
+</details>
 
 credits:
 i've gathered code from a lot of sources and modified it to work on my specific laptop and better suit my taste:
