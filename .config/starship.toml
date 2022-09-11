@@ -1,0 +1,43 @@
+# ~/.config/starship.toml
+
+format = """
+[█](#d7b788)\
+$username\
+[](bg::#1c1917  fg:#d7b788)\
+$directory\
+[](fg:#1c1917 bg:#b6b696)\
+$git_branch\
+[ ](fg:#b6b696)\
+"""
+
+# Disable the blank line at the start of the prompt
+# add_newline = false
+
+# You can also replace your username with a neat symbol like  to save some space
+[username]
+show_always = true
+style_user = "#1c1917 bg:#d7b788"
+style_root = "#1c1917 bg:#d7b788"
+format = '[$user ]($style)'
+
+[directory]
+style = "#d6d0cd bg:#1c1917"
+format = "[ $path ]($style)"
+truncation_length = 1
+truncation_symbol = ""
+
+[git_branch]
+symbol = ""
+style = "#1c1917 bg:#b6b696"
+format = '[[ $symbol $branch ](#1c1917 bg:#b6b696)]($style)'
+
+[git_status]
+style = "#1c1917 bg:#b6b696"
+format = '[[($all_status$ahead_behind )](#1c1917 bg:#b6b696)]($style)'
+
+# wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+# din bug message in terminal
+add_newline = false
+
