@@ -1,0 +1,173 @@
+
+# dotfiles
+this is the repository where i store my configuration files
+
+it is still a work in progress, and each time i am somewhat satisfied with the result, i create a new branch and store it there
+
+- **operating system:** [arch linux](https://archlinux.org)
+- **window manager:** [bspwm](https://github.com/baskerville/bspwm) + [sxhkd](https://github.com/baskerville/sxhkd)
+- **compositor:** [picom-git](https://github.com/yshui/picom)
+- **application launcher:** [rofi](https://github.com/davatorium/rofi)
+- **editor:** [neovim](https://archlinux.org/packages/community/x86_64/neovim/)
+- **pdf-viewer:** [zathura](https://archlinux.org/packages/community/x86_64/zathura-pdf-mupdf/)
+
+<details>
+    <summary>package list</summary> 
+ 
+i update this list when i remember to, so don't expect it to 100% represent my current packages
+- acpi_call 1.2.2-72
+- acpid 2.0.34-1
+- alsa-utils 1.2.7-1
+- amd-ucode 20220815.8413c63-1
+- archlinux-keyring 20220831-1
+- asusctl 4.4.0.r0.gd76cb3b-1
+- autoconf 2.71-1
+- automake 1.16.5-1
+- base 3-1
+- binutils 2.39-3
+- bison 3.8.2-4
+- bluez 5.65-3
+- bluez-utils 5.65-3
+- bspwm 0.9.10-2
+- btrfs-progs 5.19.1-1
+- cabal-install 3.4.1.0-37
+- clang 14.0.6-2
+- discord 0.0.20-1
+- erlang 25.0.4-1
+- fakeroot 1.29-1
+- file 5.43-1
+- findutils 4.9.0-1
+- firefox 104.0.2-1
+- flex 2.6.4-3
+- font-manager 0.8.8-1
+- gawk 5.2.0-3
+- gcc 12.2.0-1
+- gettext 0.21-2
+- ghc 9.0.2-1
+- ghcup-hs-bin 0.1.18.0-1
+- git 2.37.3-1
+- grep 3.8-2
+- groff 1.22.4-7
+- gtkmm3 3.24.7-1
+- gzip 1.12-1
+- intellij-idea-ultimate-edition 2022.2.1-1
+- intellij-idea-ultimate-edition-jre 2022.2.1-1
+- jdk-openjdk 18.0.2.1.u0-1
+- jdk17-temurin 17.0.4.1.u1-1
+- jre-openjdk 18.0.2.1.u0-1
+- kitty 0.26.2-1
+- libtool 2.4.7-5
+- light 1.2.2-3
+- linux 5.19.9.arch1-1
+- linux-firmware 20220815.8413c63-1
+- linux-g14 5.19.7.arch1-1
+- linux-g14-headers 5.19.7.arch1-1
+- linux-headers 5.19.9.arch1-1
+- m4 1.4.19-1
+- maim 5.7.4-3
+- make 4.3-3
+- mariadb 10.9.2-1
+- maven 3.8.6-1
+- nano 6.4-1
+- neovim 0.7.2-3
+- network-manager-applet 1.28.0-1
+- networkmanager 1.40.0-1
+- networkmanager-openvpn 1.10.0-1
+- nitrogen 1.6.1-4
+- notion-app-enhanced 2.0.18-1
+- noto-fonts-cjk 20220126-1
+- noto-fonts-emoji 20220906-1
+- nvidia-dkms 515.65.01-2
+- nvidia-prime 1.0-4
+- nvidia-settings 515.65.01-1
+- nvim-packer-git r535.dee5a4f-1
+- obsidian 0.15.9-1
+- octave 7.2.0-2
+- opam 2.1.3-1
+- openssh 9.0p1-1
+- openvpn 2.5.7-1
+- pacman 6.0.1-7
+- patch 2.7.6-8
+- pfetch 0.6.0-3
+- picom-animations-git 1770_Next.208.g51b2135_2022.05.29-1
+- pipewire-alsa 1:0.3.58-1
+- pipewire-jack 1:0.3.58-1
+- pipewire-pulse 1:0.3.58-1
+- pkgconf 1.8.0-1
+- polkit 121-1
+- powertop 2.14-1
+- pulse-secure 22.2r1.0_b1295-1
+- python-distro 1.7.0-1
+- python-pip 22.2.2-2
+- rebar3 3.18.0-1
+- rofi 1.7.5-1
+- sed 4.8-1
+- starship 1.10.3-1
+- sudo 1.9.11.p3-1
+- supergfxctl 4.0.5-1
+- sxhkd 0.6.2-2
+- teams 1.5.00.10453-1
+- telegram-desktop 4.1.1-1
+- texinfo 6.8-2
+- thrift 0.16.0-1
+- tomcat10 10.0.23-1
+- ttf-font-awesome 6.2.0-1
+- vmware-workstation 16.2.4-1
+- which 2.21-5
+- xclip 0.13-3
+- xf86-video-amdgpu 22.0.0-1
+- xf86-video-qxl 0.1.5.r16.g52c421c-2
+- xf86-video-vesa 2.5.0-3
+- xorg-bdftopcf 1.1-3
+- xorg-docs 1.7.2-1
+- xorg-font-util 1.3.3-1
+- xorg-fonts-100dpi 1.0.3-7
+- xorg-fonts-75dpi 1.0.3-7
+- xorg-iceauth 1.0.9-1
+- xorg-mkfontscale 1.2.2-1
+- xorg-server-devel 21.1.4-1
+- xorg-server-xephyr 21.1.4-1
+- xorg-server-xnest 21.1.4-1
+- xorg-server-xvfb 21.1.4-1
+- xorg-sessreg 1.1.2-3
+- xorg-smproxy 1.0.6-4
+- xorg-x11perf 1.6.1-3
+- xorg-xauth 1.1.2-1
+- xorg-xbacklight 1.2.3-3
+- xorg-xcmsdb 1.0.6-1
+- xorg-xcursorgen 1.0.7-3
+- xorg-xdpyinfo 1.3.3-4
+- xorg-xdriinfo 1.0.6-3
+- xorg-xev 1.2.5-1
+- xorg-xgamma 1.0.6-4
+- xorg-xhost 1.0.8-3
+- xorg-xinit 1.4.1-3
+- xorg-xinput 1.6.3-3
+- xorg-xkbevd 1.1.4-4
+- xorg-xkbutils 1.0.5-1
+- xorg-xkill 1.0.5-3
+- xorg-xlsatoms 1.1.3-3
+- xorg-xlsclients 1.1.4-3
+- xorg-xmodmap 1.0.11-1
+- xorg-xpr 1.1.0-1
+- xorg-xprop 1.2.5-1
+- xorg-xrdb 1.2.1-1
+- xorg-xrefresh 1.0.7-1
+- xorg-xset 1.2.4-3
+- xorg-xsetroot 1.1.2-3
+- xorg-xvinfo 1.1.4-3
+- xorg-xwayland 22.1.3-1
+- xorg-xwd 1.0.8-1
+- xorg-xwininfo 1.1.5-3
+- xorg-xwud 1.0.6-1
+- yay-git 11.3.0.r8.g7ebe648-1
+- zathura 0.4.9-1
+- zathura-pdf-mupdf 0.3.9-1
+</details>
+
+credits:
+i've gathered code from a lot of sources and modified it to work on my specific laptop and better suit my taste:
+- for the instalation of the operating system in my laptop model, i follow [Unim8trix's guide](https://github.com/Unim8trix/G14Arch)
+- for most of the themes i now use [meliora](https://github.com/meliora-theme/theme)
+- for overall inspo, visit the [unixporn subreddit](https://www.reddit.com/r/unixporn/)
+
