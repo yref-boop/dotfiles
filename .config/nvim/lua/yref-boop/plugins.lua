@@ -49,11 +49,13 @@ return packer.startup(function(use)
     requires = {'rktjmp/lush.nvim'}
   }
   use "nvim-lualine/lualine.nvim"		-- bottom bar
-  use "norcalli/nvim-colorizer.lua"	-- shows hex color values
-  use "lewis6991/gitsigns.nvim"		-- git integration
+  use "norcalli/nvim-colorizer.lua"	    -- shows hex color values
+  use "lewis6991/gitsigns.nvim"		    -- git integration
 
   use 'neovim/nvim-lspconfig'			-- language diagnostics
-  use 'williamboman/nvim-lsp-installer'
+  use 'williamboman/nvim-lsp-installer' -- lsp installer
+  
+  use 'lervag/vimtex'                   -- latex
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
