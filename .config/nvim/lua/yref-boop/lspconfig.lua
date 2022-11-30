@@ -9,11 +9,12 @@ local configs = require "lspconfig/configs"
 lsp_installer.on_server_ready(function(server)
     local opts = {}
     root_dir = util.root_pattern('*.sln', '*.fsproj', '.git')
-    
+        
     -- (optional) Customize the options passed to the server
     -- if server.name == "tsserver" then
     --     opts.root_dir = function() ... end
     -- end
+        
     if server.name == "hls" then
         opts.root_dir = util.root_pattern("*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml", ".git")
     end

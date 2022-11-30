@@ -4,4 +4,11 @@ require "yref-boop.gitsigns"
 require "yref-boop.lualine"
 require "yref-boop.lspconfig"
 
+-- limit severity of lsp messages
+vim.diagnostic.config({
+    virtual_text = {severity = {min = vim.diagnostic.severity.WARN}},
+    signs = {severity = {min = vim.diagnostic.severity.WARN}},
+    underline = {severity = {min = vim.diagnostic.severity.WARN}},
+})
+
 vim.cmd "colorscheme meliora"
