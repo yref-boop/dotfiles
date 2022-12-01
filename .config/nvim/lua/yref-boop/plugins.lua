@@ -38,6 +38,8 @@ packer.init {
   },
 }
 
+vim.cmd("autocmd Colorscheme * highlight NvimTreeNormal guibg=none guifg=#9da5b3")
+
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
@@ -46,7 +48,7 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use {
     'meliora-theme/neovim',
-    requires = {'rktjmp/lush.nvim'}
+    requires = {'rktjmp/lush.nvim'},
   }
   use "nvim-lualine/lualine.nvim"		-- bottom bar
   use "norcalli/nvim-colorizer.lua"	    -- shows hex color values
@@ -56,6 +58,16 @@ return packer.startup(function(use)
   use 'williamboman/nvim-lsp-installer' -- lsp installer
   
   use 'lervag/vimtex'                   -- latex
+
+  use({                                 -- transparency
+  "xiyaowong/nvim-transparent",
+    config = function()
+      require("transparent").setup {
+        enable = true,
+      }
+    end
+  })
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
