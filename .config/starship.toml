@@ -1,7 +1,7 @@
 # ~/.config/starship.toml
 
 format = """
-[█](#d7b788)\
+[](#d7b788)\
 $username\
 [](bg::#1c1917  fg:#d7b788)\
 $directory\
