@@ -384,23 +384,17 @@ sudo systemctl enable --now bluethooth.service
 
 ### Enable Autologin
 
-Since iam running full disc encryption, i would like to enable autologin to my X-Session. Open `/etc/lightdm/lightdm.conf` and add theese under `[Seat:*]`
+since im already running full disk encryption, i want to be able to log as my user atomatically & automatically start hyprland
 
-```bash
-pam-service=lightdm
-pam-autologin-service=lightdm-autologin
-autologin-user={MYUSERNAME}
-autologin-user-timeout=0
-session-wrapper=/etc/lightdm/Xsession
-greeter-session=lightdm-greeter
-
+for this i use `sddm`:
+the default configuration is stored on `/usr/lib/sddm/sddm.conf.d/default.conf`
+for any changes, `mkdir /etc/sddm.conf.d/`
+for autologin specifically,:
 ```
-
-Now create the group autologin and add your user
-
-```bash
-sudo groupadd -r autologin
-sudo gpasswd -a {MYUSERNAME} autologin
+/etc/sddm.conf.d/autologin.conf
 ```
-
-
+```
+[Autologin]
+User=yref-boop
+Session:hyprland.desktop
+```
