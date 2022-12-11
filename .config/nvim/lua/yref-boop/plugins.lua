@@ -46,10 +46,7 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use {
-    'meliora-theme/neovim',
-    requires = {'rktjmp/lush.nvim'},
-  }
+
   use "nvim-lualine/lualine.nvim"		-- bottom bar
   use "norcalli/nvim-colorizer.lua"	    -- shows hex color values
   use "lewis6991/gitsigns.nvim"		    -- git integration
@@ -58,6 +55,8 @@ return packer.startup(function(use)
   use 'williamboman/nvim-lsp-installer' -- lsp installer
   
   use 'lervag/vimtex'                   -- latex
+
+  use { "catppuccin/nvim", as = "catppuccin" } --catpuccin
 
   use({                                 -- transparency
   "xiyaowong/nvim-transparent",

@@ -14,13 +14,13 @@ it is still a work in progress, and each time i am somewhat satisfied with the r
 **colors**
 | name        | role                          | hex       | color                                                                     |
 | ----        | --------------------------    | --------- | --------------------------------------------------------------------------|
-| red         | main keywords (if/else/return)| `#d49191` | ![Color box](https://via.placeholder.com/24/d49191/d49191.png)            |
-| orange      | other keywords                | `#cdab89` | ![Color box](https://via.placeholder.com/24/cdab89/cdab89.png)            |
-| yellow      | strings                       | `#c4b392` | ![Color box](https://via.placeholder.com/24/c4b392/c4b392.png)            |
-| khaki       | types, delimiters             | `#bcaa9a` | ![Color box](https://via.placeholder.com/24/bcaa9a/bcaa9a.png)            |
-| blue        | functions                     | `#9e96b6` | ![Color box](https://via.placeholder.com/24/9e96b6/9e96b6.png)            |
-| purple      | constants, enums              | `#b696b1` | ![Color box](https://via.placeholder.com/24/b696b1/b696b1.png)            |
-| green       | comments like `FIX:`          | `#b6b696` | ![Color box](https://via.placeholder.com/24/b6b696/b6b696.png)            |
+| red         | main keywords (if/else/return)| `#d34f80` | ![Color box](https://via.placeholder.com/24/d49191/d49191.png)            |
+| orange      | other keywords                | `#f9e2af` | ![Color box](https://via.placeholder.com/24/cdab89/cdab89.png)            |
+| yellow      | strings                       | `#f9e2af` | ![Color box](https://via.placeholder.com/24/c4b392/c4b392.png)            |
+| cyan        | types, delimiters             | `#89dceb` | ![Color box](https://via.placeholder.com/24/bcaa9a/bcaa9a.png)            |
+| blue        | functions                     | `#74c7ec` | ![Color box](https://via.placeholder.com/24/9e96b6/9e96b6.png)            |
+| purple      | constants, enums              | `#e872e4` | ![Color box](https://via.placeholder.com/24/b696b1/b696b1.png)            |
+| green       | comments like `FIX:`          | `#a6e3a1` | ![Color box](https://via.placeholder.com/24/b6b696/b6b696.png)            |
 | dark green  | comments                      | `#727246` | ![Color box](https://via.placeholder.com/24/727246/727246.png)            |
 |             | LSP errors                    | `#d78f88` | ![Color box](https://via.placeholder.com/24/d78f88/d78f88.png)            |
 |             | LSP warnings                  | `#d7b788` | ![Color box](https://via.placeholder.com/24/d7b788/d7b788.png)            |

@@ -1,13 +1,13 @@
 aux_theme = function()
     local colors = {
-            darkgray = "#16161d",
+            darkgray = "#171617",
             gray = "#727169",
-            outerbg = "#16161D",
-            normal = "#7e9cd8",
-            insert = "#98bb6c",
-            visual = "#ffa066",
-            replace = "#e46876",
-            command = "#e6c384",
+            outerbg = "#171617",
+            normal = "#89dceb",
+            insert = "#EB82AB",
+            visual = "#EF8C87",
+            replace = "#D34F80",
+            command = "#f9e2af",
     }
     return {
             inactive = {
@@ -116,6 +116,7 @@ local layout = {
             --    return " "
             --end,
             "branch",
+            icons_enabled = false,
             separator = { left = "", right = "" }
         },
         {
