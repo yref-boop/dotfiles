@@ -1,0 +1,35 @@
+{
+    "layer" : "bottom",
+    "position": "left",
+    "width" : "2",
+    "modules-left": ["wlr/workspaces"],
+    
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "format-active": "{icon}",
+        "on-click": "activate"
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "loginctl poweroff"
+    },
+
+    "clock": {
+        "format": "{:%H\n%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    },
+
+    "custom/separator": {
+	    "format": "──────"
+    },
+
+    "memory": {
+	    "format": "{}%"
+    },
+
+    "custom/wofi": {
+	    "format": "",
+	    "on-click": "wofi --show run"
+    }
+}
