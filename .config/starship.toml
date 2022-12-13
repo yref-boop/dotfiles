@@ -1,35 +1,35 @@
 # ~/.config/starship.toml
 
 format = """
-[](#EB82AB)\
+[](#eb82ab)\
 $username\
-[](bg:#171617  fg:#EB82AB)\
+[](bg:#171617  fg:#eb82ab)\
 $directory\
-[](bg:#171617 fg:#FAD8D7)\
+[](bg:#171617 fg:#fad8d7)\
 $git_branch\
-[ ](fg:#FAD8D7)\
+[ ](fg:#fad8d7)\
 """
 
 [username]
 show_always = true
-style_user = "#171617 bg:#EB82AB"
-style_root = "#171617 bg:#EB82AB"
+style_user = "#171617 bg:#eb82ab"
+style_root = "#171617 bg:#eb82ab"
 format = '[>]($style)'
 
 [directory]
-style = "fg:#FDE8E7 bg:#171617"
+style = "fg:#fde8e7 bg:#171617"
 format = "[ $path ]($style)"
 truncation_length = 1
 truncation_symbol = ""
 
 [git_branch]
 symbol = ""
-style = "#1c1917 bg:#FAD8D7"
-format = '[[ $symbol $branch ](#171617 bg:#FAD8D7)]($style)'
+style = "#1c1917 bg:#fad8d7"
+format = '[[ $symbol $branch ](#171617 bg:#fad8d7)]($style)'
 
 [git_status]
-style = "#1c1917 bg:#FAD8D7"
-format = '[[($all_status$ahead_behind )](#171617 bg:#FAD8D7)]($style)'
+style = "#1c1917 bg:#fad8d7"
+format = '[[($all_status$ahead_behind )](#171617 bg:#fad8d7)]($style)'
 
 # check current directory files time
 scan_timeout = 10

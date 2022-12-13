@@ -29,7 +29,7 @@ require("catppuccin").setup({
     },
     color_overrides = {
         all = {
-            text = "#FDE8E7",
+            text = "#fde8e7",
         },
     },
     custom_highlights = {},
