@@ -1,6 +1,6 @@
 {
     "layer" : "bottom",
-    "position": "left",
+    "position": "right",
     "width" : "2",
     "modules-left": ["wlr/workspaces"],
     
