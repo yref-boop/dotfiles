@@ -39,6 +39,10 @@ window#waybar {
     color: #FDE8E7;
 }
 
+#workspaces button.active:hover {
+    padding-left: 100px;
+}
+
 /*animation*/
 @keyframes gradient{
 	0% {
@@ -50,4 +54,30 @@ window#waybar {
 	100% {
 		background-position: 0% 50%;
 	}
+
+
+}
+
+
+/* --------------- BATTERY ----------------- */
+
+
+#battery {
+    background: #E76FB4;
+    color: #171617;
+
+    border-radius: 15px;
+
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right: 12px;
+    margin-left: 12px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    font-weight: bolder;
+    font-size: 22;
 }

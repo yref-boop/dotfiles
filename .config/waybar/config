@@ -1,13 +1,33 @@
 {
-    "layer" : "bottom",
+    "layer" : "top",
     "position": "right",
     "width" : "2",
     "modules-left": ["wlr/workspaces"],
+    "modules-right": ["battery"],
     
     "wlr/workspaces": {
         "format": "{icon}",
         "format-active": "{icon}",
-        "on-click": "activate"
+        "on-click": "activate",
+        "on-hover": "activate",
+        "tooltip": "cum"
+    },
+
+    "cpu": {
+        "interval":1,
+        "format": "{icon0}\n{icon1}\n{icon2}\n{icon3}",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    },
+
+    "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon}",
+        "format-charging": "",
+        "format-plugged": "",
+        "format-icons": ["", "", "", "", ""]
     },
 
     "custom/power": {
