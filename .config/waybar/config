@@ -3,7 +3,7 @@
     "position": "right",
     "width" : "2",
     "modules-left": ["wlr/workspaces"],
-    "modules-right": ["battery"],
+    "modules-right": ["clock", "battery"],
     
     "wlr/workspaces": {
         "format": "{icon}",

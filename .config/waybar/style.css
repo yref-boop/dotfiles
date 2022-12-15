@@ -40,7 +40,7 @@ window#waybar {
 }
 
 #workspaces button.active:hover {
-    padding-left: 100px;
+    background: #E76FB4;
 }
 
 /*animation*/
@@ -55,20 +55,19 @@ window#waybar {
 		background-position: 0% 50%;
 	}
 
-
 }
 
 
 /* --------------- BATTERY ----------------- */
 
-
 #battery {
+
     background: #E76FB4;
     color: #171617;
 
     border-radius: 15px;
 
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 20px;
     margin-right: 12px;
     margin-left: 12px;
@@ -80,4 +79,31 @@ window#waybar {
 
     font-weight: bolder;
     font-size: 22;
+
+}
+
+
+/* ----------------- CLOCK ------------------- */
+
+#clock {
+   
+    background: #E76FB4;
+    color: #171617;
+
+    border-radius: 15px;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 12px;
+    margin-left: 12px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+
+    font-family: "Hack Pro", sans-serif, monospace;
+    font-weight: bolder;
+    font-size: 18;
+
 }
