@@ -55,7 +55,11 @@ return packer.startup(function(use)
   use 'lervag/vimtex'                   -- latex
   use {'CRAG666/code_runner.nvim',      -- execute code from nvim
       requires = 'nvim-lua/plenary.nvim' 
-  } 
+  }
+  use "nvim-telescope/telescope.nvim"   -- telescope
+  use 'nvim-telescope/telescope-media-files.nvim'
+
+    use { "kyazdani42/nvim-tree.lua"}
 
   use { "catppuccin/nvim", as = "catppuccin" } --catpuccin
 
@@ -66,6 +70,11 @@ return packer.startup(function(use)
       }
     end
   })
+-- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

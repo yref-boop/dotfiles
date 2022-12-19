@@ -74,6 +74,16 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  catppuccin = {
+    loaded = true,
+    path = "/home/yref-boop/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
+  ["code_runner.nvim"] = {
+    loaded = true,
+    path = "/home/yref-boop/.local/share/nvim/site/pack/packer/start/code_runner.nvim",
+    url = "https://github.com/CRAG666/code_runner.nvim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/yref-boop/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -83,16 +93,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yref-boop/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
-  ["lush.nvim"] = {
-    loaded = true,
-    path = "/home/yref-boop/.local/share/nvim/site/pack/packer/start/lush.nvim",
-    url = "https://github.com/rktjmp/lush.nvim"
-  },
-  neovim = {
-    loaded = true,
-    path = "/home/yref-boop/.local/share/nvim/site/pack/packer/start/neovim",
-    url = "https://github.com/meliora-theme/neovim"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
@@ -115,6 +115,16 @@ _G.packer_plugins = {
     path = "/home/yref-boop/.local/share/nvim/site/pack/packer/start/nvim-transparent",
     url = "https://github.com/xiyaowong/nvim-transparent"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/yref-boop/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/yref-boop/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/yref-boop/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -129,6 +139,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yref-boop/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  ["telescope-media-files.nvim"] = {
+    loaded = true,
+    path = "/home/yref-boop/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim",
+    url = "https://github.com/nvim-telescope/telescope-media-files.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/yref-boop/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   vimtex = {
     loaded = true,

@@ -4,7 +4,10 @@ require "yref-boop.gitsigns"
 require "yref-boop.lualine"
 require "yref-boop.lspconfig"
 require "yref-boop.colors"
-require "yref-boop.code_runner"
+require "yref-boop.telescope"
+require "yref-boop.treesitter"
+require "yref-boop.nvim-tree"
+--require "yref-boop.coderunner"
 
 -- limit severity of lsp messages
 vim.diagnostic.config({

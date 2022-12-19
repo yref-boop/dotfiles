@@ -1,4 +1,5 @@
 require('code_runner').setup({
+
       -- put here the commands by filetype
       --   filetype = {
       --        java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
