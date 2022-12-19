@@ -44,38 +44,56 @@ vim.cmd("autocmd Colorscheme * highlight NvimTreeNormal guibg=none guifg=#9da5b3
 
 -- plugins
 return packer.startup(function(use)
-  use "wbthomason/packer.nvim"          -- have packer manage itself
-  use "nvim-lua/popup.nvim"             -- an implementation of the popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim"           -- useful lua functions used by lots of plugins
-  use "nvim-lualine/lualine.nvim"		-- bottom bar
-  use "norcalli/nvim-colorizer.lua"	    -- shows hex color values
-  use "lewis6991/gitsigns.nvim"		    -- git integration
-  use 'neovim/nvim-lspconfig'			-- language diagnostics
-  use 'williamboman/nvim-lsp-installer' -- lsp installer
-  use 'lervag/vimtex'                   -- latex
-  use {'CRAG666/code_runner.nvim',      -- execute code from nvim
-      requires = 'nvim-lua/plenary.nvim' 
-  }
-  use "nvim-telescope/telescope.nvim"   -- telescope
-  use 'nvim-telescope/telescope-media-files.nvim'
-
+    use "wbthomason/packer.nvim"          -- have packer manage itself
+    use "nvim-lua/popup.nvim"             -- an implementation of the popup API from vim in Neovim
+    use "nvim-lua/plenary.nvim"           -- useful lua functions used by lots of plugins
+    use "nvim-lualine/lualine.nvim"		-- bottom bar
+    use "norcalli/nvim-colorizer.lua"	    -- shows hex color values
+    use "lewis6991/gitsigns.nvim"		    -- git integration
+    use 'neovim/nvim-lspconfig'			-- language diagnostics
+    use 'williamboman/nvim-lsp-installer' -- lsp installer
+    use 'lervag/vimtex'                   -- latex
+    use {'CRAG666/code_runner.nvim',      -- execute code from nvim
+        requires = 'nvim-lua/plenary.nvim' 
+    }
+    use "nvim-telescope/telescope.nvim"   -- telescope
+    use 'nvim-telescope/telescope-media-files.nvim'
     use { "kyazdani42/nvim-tree.lua"}
 
-  use { "catppuccin/nvim", as = "catppuccin" } --catpuccin
+    use { "catppuccin/nvim", as = "catppuccin" } --catpuccin
 
-  use({ "xiyaowong/nvim-transparent",   -- transparency 
-    config = function()
-      require("transparent").setup {
-        enable = true,
-      }
-    end
-  })
--- Treesitter
-  use {
+    use({ "xiyaowong/nvim-transparent",   -- transparency 
+        config = function()
+            require("transparent").setup {
+                enable = true,
+            }
+        end
+    })
+
+    -- Treesitter
+    use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
 
+  use "L3MON4D3/LuaSnip"
+  use "godlygeek/tabular"
+  use "folke/tokyonight.nvim"
+  use "preservim/vim-markdown"
+  use "TimUntersberger/neogit"
+  use "ryanoasis/vim-devicons"
+  use "gelguy/wilder.nvim"
+  use "mfussenegger/nvim-dap"
+  use "dart-lang/dart-vim-plugin"
+  use "beauwilliams/focus.nvim"
+  use "benfowler/telescope-luasnip.nvim"
+  use "akinsho/flutter-tools.nvim"
+  use "nvim-telescope/telescope.nvim"
+  use "jose-elias-alvarez/null-ls.nvim"
+  use "nvim-telescope/telescope-ui-select.nvim"
+  use "nvim-telescope/telescope-file-browser.nvim"
+  use "lukas-reineke/indent-blankline.nvim"
+  
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
