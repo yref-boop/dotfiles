@@ -7,6 +7,7 @@ require "yref-boop.colors"
 require "yref-boop.telescope"
 require "yref-boop.treesitter"
 require "yref-boop.nvim-tree"
+
 --require "yref-boop.coderunner"
 
 -- limit severity of lsp messages
@@ -16,3 +17,4 @@ vim.diagnostic.config({
     underline = {severity = {min = vim.diagnostic.severity.WARN}},
 })
 
+vim.cmd("hi Normal guibg = #171617")

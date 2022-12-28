@@ -7,15 +7,12 @@ require("catppuccin").setup({
     transparent_background = true,
     term_colors = true,
     dim_inactive = {
-        enabled = false,
-        shade = "dark",
-        percentage = 0.15,
     },
     no_italic = false, -- Force no italic
     no_bold = false, -- Force no bold
     styles = {
         comments = { "italic" },
-        conditionals = { "italic" },
+        conditionals = {},
         loops = {},
         functions = {},
         keywords = {},
@@ -29,10 +26,57 @@ require("catppuccin").setup({
     },
     color_overrides = {
         all = {
-            text = "#fde8e7",
+
+            text =      "#fde8e7",
+
+            blue =      "#f783eb", -- constructor
+            yellow =    "#b987ff", -- types & warnings
+            mauve =     "#f5be8a", -- tag
+            sky =       "#a3c9d5", -- operators
+
+            rosewater = "#f5e0dc", -- winbar
+            flamingo =  "#f2cdcd", --target word
+            pink =      "#f5c2e7", --just pink
+
+            red =       "#f38bb8", --error
+            maroon =    "#eba0ac", --lighter red
+            peach =     "#fab387", --number
+            green =     "#a6e3a1", -- diff add
+            teal =      "#94e2d5", -- hint
+            sapphire =  "#74c7ec", --constructor func definition
+            lavender =  "#b4befe",
+
         },
     },
-    custom_highlights = {},
+      highlight_overrides = {
+                all = function(colors)
+            return {
+                    NvimTreeNormal = { fg = colors.none },
+                    CmpBorder = { fg = "#3e4145" },
+                }
+        end,
+                latte = function(latte)
+            return {
+                    Normal = { fg = latte.base },
+                }
+        end,
+                frappe = function(frappe)
+            return {
+                    ["@comment"] = { fg = frappe.surface2, style = { "italic" } },
+                }
+        end,
+                macchiato = function(macchiato)
+            return {
+                    LineNr = { fg = macchiato.overlay1 },
+                }
+        end,
+                mocha = function(mocha)
+            return {
+                }
+        end,
+            },
+    custom_highlights = {
+    },
     integrations = {
         cmp = true,
         gitsigns = true,

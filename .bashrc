@@ -15,3 +15,4 @@ eval "$(starship init bash)"
 
 alias nvide='WINIT_UNIX_BACKEND=x11 neovide --multigrid'
 
+export PATH="$HOME/.ghcup/bin:$PATH"

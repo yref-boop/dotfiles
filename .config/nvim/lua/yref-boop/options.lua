@@ -22,8 +22,9 @@ o.termguicolors = true 			-- set terminal gui colors
 o.number = true                 -- show numberline
 
 -- neovide options
-vim.g.neovide_transparency = 0.95
+
+vim.g.neovide_transparency = 0.97
 vim.g.neovide_hide_mouse_when_typing = 'true'
 vim.g.neovide_cursor_trail_size = 0.25
 
-
+vim.cmd("hi Normal guibg = #171617")

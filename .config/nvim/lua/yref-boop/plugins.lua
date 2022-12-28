@@ -44,57 +44,93 @@ vim.cmd("autocmd Colorscheme * highlight NvimTreeNormal guibg=none guifg=#9da5b3
 
 -- plugins
 return packer.startup(function(use)
-    use "wbthomason/packer.nvim"          -- have packer manage itself
-    use "nvim-lua/popup.nvim"             -- an implementation of the popup API from vim in Neovim
-    use "nvim-lua/plenary.nvim"           -- useful lua functions used by lots of plugins
-    use "nvim-lualine/lualine.nvim"		-- bottom bar
-    use "norcalli/nvim-colorizer.lua"	    -- shows hex color values
-    use "lewis6991/gitsigns.nvim"		    -- git integration
-    use 'neovim/nvim-lspconfig'			-- language diagnostics
-    use 'williamboman/nvim-lsp-installer' -- lsp installer
-    use 'lervag/vimtex'                   -- latex
-    use {'CRAG666/code_runner.nvim',      -- execute code from nvim
-        requires = 'nvim-lua/plenary.nvim' 
+    use "wbthomason/packer.nvim"            -- packer manage
+    use "nvim-lua/popup.nvim"               -- popup API from vim in Neovim
+    
+    use "nvim-lua/plenary.nvim"             -- auxiliary plugin
+    use "nvim-lualine/lualine.nvim"         -- bottom bar
+    use "norcalli/nvim-colorizer.lua"       -- shows hex color values
+
+    use { "kyazdani42/nvim-tree.lua"}       -- file system
+
+    use { "catppuccin/nvim",                -- catppuccin
+        as = "catppuccin" }
+
+    use "nvim-treesitter/nvim-treesitter"   -- treesitter
+
+    use "L3MON4D3/LuaSnip"                  -- snippet engine
+
+    use "godlygeek/tabular"                 -- beautify code
+    use "lukas-reineke/indent-blankline.nvim" -- show invisible chars
+
+    use {'CRAG666/code_runner.nvim',        -- execute code from nvim
+            requires = 'nvim-lua/plenary.nvim'
     }
-    use "nvim-telescope/telescope.nvim"   -- telescope
+    use 'neovim/nvim-lspconfig'             -- language diagnostics
+    use 'williamboman/nvim-lsp-installer'   -- lsp installer
+    -- use "preservim/vim-markdown"            -- markdown
+    use 'lervag/vimtex'                     -- latex
+  
+    use "TimUntersberger/neogit"            -- git support for nvim
+    use "lewis6991/gitsigns.nvim"           -- git integration
+
+    use "ryanoasis/vim-devicons"            -- language icons
+    use "gelguy/wilder.nvim"                -- better suggestions 
+    
+    use "mfussenegger/nvim-dap"             -- debug
+
+    use "beauwilliams/focus.nvim"           -- split windows
+ 
+
+    -- telescope searcher
+    --
+    use "benfowler/telescope-luasnip.nvim"
+    use "nvim-telescope/telescope.nvim"
     use 'nvim-telescope/telescope-media-files.nvim'
-    use { "kyazdani42/nvim-tree.lua"}
+    use "nvim-telescope/telescope-ui-select.nvim" 
 
-    use { "catppuccin/nvim", as = "catppuccin" } --catpuccin
-
-    use({ "xiyaowong/nvim-transparent",   -- transparency 
+    use ({"nvim-telescope/telescope.nvim",
         config = function()
-            require("transparent").setup {
-                enable = true,
+            local actions = require "telescope.actions"
+            require("telescope").setup {
+                sort_mru = true,
+                sort_lastused = true,
+                ignore_current_buffer = true,
+                pickers = { buffers = { sort_lastused = true } },
+                defaults = {
+                    initial_mode = "insert",
+                    mappings = {
+                        i = {
+                            ["<C-j>"] = actions.move_selection_next,
+                            ["<C-k>"] = actions.move_selection_previous,
+                        },
+                    n = {},
+                    },
+                },
+                extensions = {
+                    ui_select = { require("telescope.themes").get_dropdown {} },
+                    file_browser = {
+                        hijack_netrw = true,
+                        path = "%:p:h",
+                        mappings = {
+                            ["i"] = {},
+                            ["n"] = {},
+                        },
+                    },
+                },
             }
-        end
+        require("telescope").load_extension "ui-select"
+        require("telescope").load_extension "file_browser"
+        require("telescope").load_extension "luasnip"
+        require("luasnip.loaders.from_vscode").lazy_load { 
+            paths = { "~/.config/nvim/lua/custom/snippets" } 
+        }
+        end,
     })
 
-    -- Treesitter
-    use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
 
-  use "L3MON4D3/LuaSnip"
-  use "godlygeek/tabular"
-  use "folke/tokyonight.nvim"
-  use "preservim/vim-markdown"
-  use "TimUntersberger/neogit"
-  use "ryanoasis/vim-devicons"
-  use "gelguy/wilder.nvim"
-  use "mfussenegger/nvim-dap"
-  use "dart-lang/dart-vim-plugin"
-  use "beauwilliams/focus.nvim"
-  use "benfowler/telescope-luasnip.nvim"
-  use "akinsho/flutter-tools.nvim"
-  use "nvim-telescope/telescope.nvim"
-  use "jose-elias-alvarez/null-ls.nvim"
-  use "nvim-telescope/telescope-ui-select.nvim"
-  use "nvim-telescope/telescope-file-browser.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
-  
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
-  end
+    if PACKER_BOOTSTRAP then
+        require("packer").sync()
+    end
+
 end)
