@@ -17,9 +17,9 @@ set default-bg "#171617" #00
 set default-fg "#fde8e7" #01
 
 set statusbar-fg "#3e3e48" #04
-set statusbar-bg "#202020" #01
+set statusbar-bg "#171617" #01
 
-set inputbar-bg "#1c1917" #00 currently not used
+set inputbar-bg "#171617" #00 currently not used
 set inputbar-fg "#FFFFFF" #02
 
 set notification-error-bg "#ac4142" #08
@@ -34,11 +34,11 @@ set highlight-active-color "#F4BF75" #0D
 set completion-highlight-fg "#151515" #02
 set completion-highlight-bg "#90A959" #0C
 
-set completion-bg "#101010" #02
+set completion-bg "#171617" #02
 set completion-fg "#d6d0cd" #0C
 
 set notification-bg "#90A959" #0B
-set notification-fg "#101010" #00
+set notification-fg "#171617" #00
 
 set recolor "true"
 set recolor-lightcolor "#1c1917" #00
