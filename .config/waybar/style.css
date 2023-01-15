@@ -3,7 +3,6 @@ window#waybar {
     background-color: transparent;
 }
 
-
 /* -------------- WORKSPACES ---------------- */
 #workspaces{
     background-color: transparent;
@@ -62,7 +61,10 @@ window#waybar {
 
 #battery {
 
-    background: #E76FB4;
+    background: rgb(240,160,256);
+    background: linear-gradient(100deg, rgba(240, 160, 156, 1), rgba(230, 102, 185, 1), rgba(194, 86, 172, 1));
+    background-size: 300% 300%;
+    animation: gradient 6s ease infinite; /*high consumption*/
     color: #171617;
 
     border-radius: 15px;
@@ -86,9 +88,8 @@ window#waybar {
 /* ----------------- CLOCK ------------------- */
 
 #clock {
-   
-    background: #E76FB4;
-    color: #171617;
+    background: #171617;
+    color: 	#FDE8E7;
 
     border-radius: 15px;
 

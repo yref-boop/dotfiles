@@ -3,7 +3,19 @@
     "position": "right",
     "width" : "2",
     "modules-left": ["wlr/workspaces"],
-    "modules-right": ["clock", "battery"],
+    "modules-right": ["custom/pipewire","clock", "battery"],
+
+    "custom/pipewire": {
+        "format": "{icon}",
+        "return-type": "json",
+        "signal": 8,
+        "interval": "once",
+        "format-icons": {
+            "mute": "",
+            "default": ["", "", "", ""],
+        },
+        "exec": "pw-volume status"
+    },
     
     "wlr/workspaces": {
         "format": "{icon}",
