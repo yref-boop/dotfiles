@@ -53,6 +53,7 @@ require("catppuccin").setup({
             return {
                     NvimTreeNormal = { fg = colors.none },
                     CmpBorder = { fg = "#3e4145" },
+                    ColorColumn = { ctermbg = "#111011"}
                 }
         end,
                 latte = function(latte)

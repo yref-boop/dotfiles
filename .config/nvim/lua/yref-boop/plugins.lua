@@ -44,46 +44,46 @@ vim.cmd("autocmd Colorscheme * highlight NvimTreeNormal guibg=none guifg=#9da5b3
 
 -- plugins
 return packer.startup(function(use)
-    use "wbthomason/packer.nvim"            -- packer manage
-    use "nvim-lua/popup.nvim"               -- popup API from vim in Neovim
+    use "wbthomason/packer.nvim"                -- packer manage
+    use "nvim-lua/popup.nvim"                   -- popup API from vim in Neovim
     
-    use "nvim-lua/plenary.nvim"             -- auxiliary plugin
-    use "nvim-lualine/lualine.nvim"         -- bottom bar
-    use "norcalli/nvim-colorizer.lua"       -- shows hex color values
+    use "nvim-lua/plenary.nvim"                 -- auxiliary plugin
+    use "nvim-lualine/lualine.nvim"             -- bottom bar
+    use "norcalli/nvim-colorizer.lua"           -- shows hex color values
 
-    use { "kyazdani42/nvim-tree.lua"}       -- file system
+    use { "kyazdani42/nvim-tree.lua"}           -- file system
 
-    use { "catppuccin/nvim",                -- catppuccin
+    use { "catppuccin/nvim",                    -- catppuccin
         as = "catppuccin" }
 
-    use "nvim-treesitter/nvim-treesitter"   -- treesitter
+    use "nvim-treesitter/nvim-treesitter"       -- treesitter
 
-    use "L3MON4D3/LuaSnip"                  -- snippet engine
+    use "L3MON4D3/LuaSnip"                      -- snippet engine
 
-    use "godlygeek/tabular"                 -- beautify code
-    use "lukas-reineke/indent-blankline.nvim" -- show invisible chars
+    use "godlygeek/tabular"                     -- beautify code
+    use "lukas-reineke/indent-blankline.nvim"   -- show invisible chars
+    use "xiyaowong/virt-column.nvim"            -- add indicator on line 80
 
-    use {'CRAG666/code_runner.nvim',        -- execute code from nvim
+    use {'CRAG666/code_runner.nvim',            -- execute code from nvim
             requires = 'nvim-lua/plenary.nvim'
     }
-    use 'neovim/nvim-lspconfig'             -- language diagnostics
-    use 'williamboman/nvim-lsp-installer'   -- lsp installer
-    -- use "preservim/vim-markdown"            -- markdown
-    use 'lervag/vimtex'                     -- latex
+    use 'neovim/nvim-lspconfig'                 -- language diagnostics
+    use 'williamboman/nvim-lsp-installer'       -- lsp installer
+    use 'lervag/vimtex'                         -- latex
   
-    use "TimUntersberger/neogit"            -- git support for nvim
-    use "lewis6991/gitsigns.nvim"           -- git integration
+    use "TimUntersberger/neogit"                -- git support for nvim
+    use "lewis6991/gitsigns.nvim"               -- git integration
 
-    use "ryanoasis/vim-devicons"            -- language icons
-    use "gelguy/wilder.nvim"                -- better suggestions 
+    use "ryanoasis/vim-devicons"                -- language icons
+    use "gelguy/wilder.nvim"                    -- better suggestions 
     
-    use "mfussenegger/nvim-dap"             -- debug
+    use "mfussenegger/nvim-dap"                 -- debug
 
-    use "beauwilliams/focus.nvim"           -- split windows
+    use "beauwilliams/focus.nvim"               -- split windows
  
 
     -- telescope searcher
-    --
+
     use "benfowler/telescope-luasnip.nvim"
     use "nvim-telescope/telescope.nvim"
     use 'nvim-telescope/telescope-media-files.nvim'

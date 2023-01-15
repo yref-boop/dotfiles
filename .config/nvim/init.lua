@@ -17,4 +17,7 @@ vim.diagnostic.config({
     underline = {severity = {min = vim.diagnostic.severity.WARN}},
 })
 
+vim.g.virtcolumn_char = '▕' -- char to display the line
+vim.g.virtcolumn_priority = 10 -- priority of extmark
+vim.cmd("set colorcolumn=70")
 vim.cmd("hi Normal guibg = #171617")

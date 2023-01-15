@@ -194,6 +194,11 @@ _G.packer_plugins = {
     path = "/home/yref-boop/.local/share/nvim/site/pack/packer/start/vimtex",
     url = "https://github.com/lervag/vimtex"
   },
+  ["virt-column.nvim"] = {
+    loaded = true,
+    path = "/home/yref-boop/.local/share/nvim/site/pack/packer/start/virt-column.nvim",
+    url = "https://github.com/xiyaowong/virt-column.nvim"
+  },
   ["wilder.nvim"] = {
     loaded = true,
     path = "/home/yref-boop/.local/share/nvim/site/pack/packer/start/wilder.nvim",

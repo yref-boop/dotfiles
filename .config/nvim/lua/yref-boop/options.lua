@@ -15,7 +15,7 @@ vim.wo.fillchars='eob: '		-- change the ~ character to a space on non-written li
 o.showmode = false              -- do not write the mode on the bottom
 
 o.guifont = {                   -- font used in graphical applications
-    "Source Code Pro", ":h7.75:b"
+    "Source Code Pro", ":h7.5:b"
 }
 
 o.termguicolors = true 			-- set terminal gui colors
