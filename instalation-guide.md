@@ -1,6 +1,7 @@
 
 # Arch Linux on Asus ROG Zephyrus G14 (G401II)
-My own notes installing Arch Linux with btrfs, disc encryption, auto-snapshots, no-noise fan-curves on my Asus ROG Zephyrus G14
+my modification of [Unim8trix's install guide](https://github.com/Unim8trix/G14Arch): Arch Linux with btrfs, disc encryption, auto-snapshots, no-noise fan-curves on my Asus ROG Zephyrus G14
+ 
 
 ## Basic Install
 
@@ -397,4 +398,18 @@ for autologin specifically,:
 [Autologin]
 User=yref-boop
 Session:hyprland.desktop
+```
+
+### config repo alias
+init a bare repository on home folder
+```
+git init --bare $HOME/.cfg
+```
+add the following alias to the .bashrc:
+```
+alias dots='/usr/bin/git --git-dir=/home/yref-boop/.dots/ --work-tree=/home/yref-boop'
+```
+additionally, for this repo to show a cleaner status, set untracked files to not be shown
+```
+config config --local status.showUntrackedFiles no
 ```
