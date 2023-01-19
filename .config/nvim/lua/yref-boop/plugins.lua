@@ -61,7 +61,7 @@ return packer.startup(function(use)
     use "L3MON4D3/LuaSnip"                      -- snippet engine
 
     use "godlygeek/tabular"                     -- beautify code
-    use "lukas-reineke/indent-blankline.nvim"   -- show invisible chars
+    use "lukas-reineke/indent-blankline.nvim"   -- blank characters
     use "xiyaowong/virt-column.nvim"            -- add indicator on line 80
 
     use {'CRAG666/code_runner.nvim',            -- execute code from nvim
