@@ -90,6 +90,13 @@ Check mountmoints with `df -Th`
 
 ### Install the system using pacstrap
 
+first of all, to ensure that the keyring is updated (specially when using old ISOs):
+```
+pacman-key --init
+pacman-key populate archlinux
+pacman -Sy archlinux-keyring
+```
+once the keyring is updated, start instalation:
 ```bash
 pacstrap /mnt base base-devel linux linux-firmware btrfs-progs neovim networkmanager amd-ucode
 ```
