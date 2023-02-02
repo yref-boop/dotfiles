@@ -1,0 +1,65 @@
+
+{
+    "layer" : "top",
+    "position": "right",
+    "width" : "2",
+    "modules-left": ["wlr/workspaces"],
+    "modules-right": ["custom/pipewire","clock", "battery"],
+
+    "custom/pipewire": {
+        "format": "{icon}",
+        "return-type": "json",
+        "signal": 8,
+        "interval": "once",
+        "format-icons": {
+            "mute": "",
+            "default": ["", "", "", ""],
+        },
+        "exec": "pw-volume status"
+    },
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "format-active": "{icon}",
+        "on-click": "activate",
+        "on-hover": "activate",
+    },
+
+    "cpu": {
+        "interval":1,
+        "format": "{icon0}\n{icon1}\n{icon2}\n{icon3}",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    },
+
+    "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon}",
+        "format-charging": "",
+        "format-icons" : ["","","","","","","","","","",""]
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "loginctl poweroff"
+    },
+
+    "clock": {
+        "format": "{:%H\n%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    },
+
+    "custom/separator": {
+        "format": "──────"
+    },
+
+    "memory": {
+        "format": "{}%"
+    },
+
+    "custom/wofi": {
+        "format": "",
+        "on-click": "wofi --show run"
+    }
+}

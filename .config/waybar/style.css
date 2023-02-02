@@ -1,0 +1,114 @@
+
+* {
+font-family: Roboto, "Symbols Nerd Font", "Font Awesome 5 Pro Solid";
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+/* -------------- WORKSPACES ---------------- */
+#workspaces{
+    background-color: transparent;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-right: 12px;
+    margin-left: 12px;
+}
+
+#workspaces button{
+    box-shadow: rgba(0, 0, 0, 0.226) 1 1 4 1px;
+    background-color: #100910;
+    border-radius: 15px;
+    margin-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 6px;
+    font-weight: bolder;
+    color: 	#FDE8E7;
+}
+
+/*current workspace*/
+#workspaces button.active{
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border: #100910;
+    background: rgb(240,160,256);
+    background: linear-gradient(100deg, rgba(240, 160, 156, 1), rgba(230, 102, 185, 1), rgba(194, 86, 172, 1));
+    background-size: 300% 300%;
+    /*animation: gradient 6s ease infinite; high consumption*/
+    color: #FDE8E7;
+}
+
+#workspaces button.active:hover {
+    background: #E76FB4;
+}
+
+/*animation
+@keyframes gradient{
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+
+}
+*/
+
+/* --------------- BATTERY ----------------- */
+
+#battery {
+
+    background: rgb(240,160,256);
+    background: linear-gradient(100deg, rgba(240, 160, 156, 1), rgba(230, 102, 185, 1), rgba(194, 86, 172, 1));
+    background-size: 300% 300%;
+    /*animation: gradient 6s ease infinite; high consumption*/
+    color: #100910;
+
+    border-radius: 15px;
+
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-right: 12px;
+    margin-left: 12px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    font-weight: bolder;
+    font-size: 27;
+
+}
+
+
+/* ----------------- CLOCK ------------------- */
+
+#clock {
+    background: #100910;
+    color: #FDE8E7;
+
+    border-radius: 15px;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 12px;
+    margin-left: 12px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+
+    font-family: "Hack Pro", sans-serif, monospace;
+    font-weight: bolder;
+    font-size: 18;
+
+}
