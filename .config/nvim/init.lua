@@ -1,7 +1,7 @@
 -- general requires
 require "options"
 require "plugins"
-require "lspconfig"
+require "lsp_config"
 require "colors"
 require "bar"
 

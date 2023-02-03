@@ -75,10 +75,15 @@ return packer.startup(function(use)
     use {'CRAG666/code_runner.nvim',            -- execute code from nvim
             requires = 'nvim-lua/plenary.nvim'
     }
-    use 'neovim/nvim-lspconfig'                 -- language diagnostics
-    use 'williamboman/nvim-lsp-installer'       -- lsp installer
+
+    use {                                       -- language server protocol
+        "williamboman/mason.nvim",              -- lsp package manager
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+    }
+
     use 'lervag/vimtex'                         -- latex
-  
+
     use "TimUntersberger/neogit"                -- git support for nvim
     use "lewis6991/gitsigns.nvim"               -- git integration
 
