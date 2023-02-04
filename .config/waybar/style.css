@@ -35,7 +35,7 @@ window#waybar {
     padding-top: 12px;
     padding-bottom: 12px;
     border: #100910;
-    background: rgb(228,134,216);
+    background: #ff8ce6;
 
     /*
     background: linear-gradient(90deg, rgba(220,129,214, 1) 0%, rgba(207,128,214, 1) 100%);
@@ -47,7 +47,7 @@ window#waybar {
 }
 
 #workspaces button.active:hover {
-    background: #E76FB4;
+    background: #ff8ce6;
 }
 
 /*animation
@@ -69,7 +69,7 @@ window#waybar {
 
 #battery {
 
-    background: rgb(228,134,216);
+    background: #ff8ce6;
     /*background: linear-gradient(90deg, rgba(220,129,214, 1) 0%, rgba(207,128,214, 1) 100%);
     background-size: 300% 300%;*/
     /*animation: gradient 6s ease infinite; high consumption*/

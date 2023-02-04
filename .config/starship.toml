@@ -1,0 +1,39 @@
+# ~/.config/starship.toml
+
+
+format = """
+[](#ff8ce6)\
+$username\
+[](bg:#100910  fg:#ff8ce6)\
+$directory\
+[](bg:#100910 fg:#fad8d7)\
+$git_branch\
+[ ](fg:#fad8d7)\
+"""
+
+[username]
+show_always = true
+style_user = "#100910 bg:#ff8ce6"
+style_root = "#100910 bg:#ff8ce6"
+format = '[>]($style)'
+
+[directory]
+style = "fg:#fde8e7 bg:#100910"
+format = "[ $path ]($style)"
+truncation_length = 1
+truncation_symbol = ""
+
+[git_branch]
+symbol = ""
+style = "#1c1917 bg:#fad8d7"
+format = '[[ $symbol $branch ](#171617 bg:#fad8d7)]($style)'
+
+[git_status]
+style = "#1c1917 bg:#fad8d7"
+format = '[[($all_status$ahead_behind )](#171617 bg:#fad8d7)]($style)'
+
+# check current directory files time
+scan_timeout = 10
+
+# din bug message in terminal
+add_newline = false

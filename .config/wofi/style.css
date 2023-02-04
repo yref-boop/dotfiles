@@ -1,7 +1,7 @@
 window {
     margin: 100px;
-    border: 10px solid #E086D8;
-    background-color: #E086D8;
+    border: 10px solid #ff8ce6;
+    background-color: #ff8ce6;
     border-radius: 30px;
 }
 
@@ -12,7 +12,7 @@ window {
     color: #100910;
     font-weight: bold;
     background-color: #100910;
-    background: linear-gradient(90deg, rgba(167, 107, 190, 1) 0%, rgba(228,134,216, 1) 100%);
+    background: linear-gradient(90deg, rgba(255, 140, 234, 1) 0%, rgba(167, 107, 190, 1) 100%);
     outline: none;
     border-radius: 20px;
     margin: 10px;
@@ -26,7 +26,7 @@ window {
 #inner-box {
     padding: 4px;
     border: 10px solid #100910;
-    color: #E086D8;
+    color: #ff8ce6;
     font-weight: bold;
     background-color: #100910;
     border-radius: 20px;
@@ -63,5 +63,5 @@ window {
 }
 
 #entry:selected {
-    background: linear-gradient(90deg, rgba(167, 107, 190, 1) 0%, rgba(228,134,216, 1) 100%);
+    background: linear-gradient(90deg, rgba(255, 140, 234, 1) 0%, rgba(167, 107, 190, 1) 100%);
 }
