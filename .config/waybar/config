@@ -36,7 +36,7 @@
             "critical": 10
         },
         "format": "{icon}",
-        "format-charging": "",
+        "format-charging": "󰂄",
         "format-icons" : ["","","","","","","","","","",""]
     },
 

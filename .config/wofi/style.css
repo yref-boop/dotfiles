@@ -12,7 +12,7 @@ window {
     color: #100910;
     font-weight: bold;
     background-color: #100910;
-    background: linear-gradient(90deg, rgba(167, 107, 190, 1) 0%, rgba(255,195,238, 1) 100%);
+    background: linear-gradient(90deg, rgba(167, 107, 190, 1) 0%, rgba(228,134,216, 1) 100%);
     outline: none;
     border-radius: 20px;
     margin: 10px;
@@ -63,5 +63,5 @@ window {
 }
 
 #entry:selected {
-    background: linear-gradient(90deg, rgba(167, 107, 190, 1) 0%, rgba(255,195,238, 1) 100%);
+    background: linear-gradient(90deg, rgba(167, 107, 190, 1) 0%, rgba(228,134,216, 1) 100%);
 }
