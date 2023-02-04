@@ -13,13 +13,13 @@ set zoom-min 10
 set guioptions ""
 
 set font "Source Code Pro 12"
-set default-bg "#171617" #00
+set default-bg "#100910" #00
 set default-fg "#fde8e7" #01
 
 set statusbar-fg "#3e3e48" #04
 set statusbar-bg "#171617" #01
 
-set inputbar-bg "#171617" #00 currently not used
+set inputbar-bg "#100910" #00 currently not used
 set inputbar-fg "#FFFFFF" #02
 
 set notification-error-bg "#ac4142" #08
@@ -41,7 +41,7 @@ set notification-bg "#90A959" #0B
 set notification-fg "#171617" #00
 
 set recolor "true"
-set recolor-lightcolor "#171617" #00
+set recolor-lightcolor "#100910" #00
 set recolor-darkcolor "#ffffff" #06
 set recolor-reverse-video "true"
 set recolor-keephue "true"
