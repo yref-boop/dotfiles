@@ -1,4 +1,16 @@
-xclip, wl-clipboard
+## installation
+i used to have a long-ass explanation of the manual explanation here, but in all hosnesty, now i just use `archinstall`, given that most of the time i just reinstall the OS without much reason & need it ready quite fast, the installing script comes really handy <3
+
+### characteristics
+btrfs & encryption, without any extras (i manually installed the environment after the "core" instalation finished)
+
+### asusctl
+to add support for customized fan curves, cpu profiles... do the following:
+```
+sudo pacman -Sy asusctl supergfxctl
+sudo systemctl enable --now power-profiles-daemon.service
+sudo systemctl enable --now supergfxd
+```
 
 ### wifi
 connection is managed by network manager, if i want to connect to a specific network i just
@@ -42,6 +54,9 @@ sudo systemctl enable powertop.service
 
 consumption on boot is still really high, but goes down immediately after connecting to any network
 
+### clipboard
+to add an interface for my clipboard i usually just use `xclip`, but for it to interact correctly with wayland i also need `wl-clipboard`
+
 ### screenshot
 grim, slurp
 
@@ -49,11 +64,19 @@ grim, slurp
 
 noto cjk, awesome...
 
-### asusctl
-
-### bluetooth
-
 ### zathura
 
 ### neovim
-arguably one of the most important pieces of software oºn my system
+arguably one of the most important pieces of software on my system
+
+### ocaml
+install opam
+opam init
+
+### julia
+install aur's julia-bin
+
+### haskell
+yay -S ghcup-hs-bin
+ghcup install
+add line to .bashrc
