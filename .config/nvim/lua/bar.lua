@@ -44,7 +44,7 @@ aux_theme = function()
 end
 
 
-local present, lualine = pcall(require, "lualine")
+local present, lualine = pcall (require, "lualine")
 if not present then
     return
 end
@@ -145,7 +145,7 @@ local no_layout = {
 	lualine_z = {},
 }
 
-lualine.setup({
+lualine.setup ({
 	sections = layout,
 	inactive_sections = no_layout,
 	options = {
