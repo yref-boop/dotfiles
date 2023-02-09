@@ -2,6 +2,7 @@
 require "options"
 require "plugins"
 require "lsp_config"
+require "git_signs"
 require "colors"
 require "bar"
 

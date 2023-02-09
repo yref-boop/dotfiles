@@ -13,6 +13,8 @@ require("mason-lspconfig").setup({
     }
 })
 
+
+
 require("lspconfig").sumneko_lua.setup {}
 require("lspconfig").julials.setup {}
 require("lspconfig").ocamllsp.setup {}
@@ -23,4 +25,7 @@ require("lspconfig").clangd.setup {}
 require("lspconfig").jedi_language_server.setup {}
 require("lspconfig").erlangls.setup {}
 require("lspconfig").bashls.setup {}
-require("lspconfig").jdtls.setup{}
+require("lspconfig").jdtls.setup{
+    root_dir = (require"lspconfig/util").root_pattern('build.xml', 'pom.xml', 'settings.gradle', 'settings.gradle.kts', '.git')
+
+}

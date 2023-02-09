@@ -2,7 +2,7 @@ o = vim.opt
 
 
 -- basics
-
+o.mouse = ""                    -- disable mouse support
 o.tabstop = 4                   -- set the number of spaces in a tab to 4
 o.smartindent = true            -- autoindent
 o.shiftwidth = 4                -- number of spaces by indentation
