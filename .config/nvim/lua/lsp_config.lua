@@ -10,10 +10,9 @@ require("mason-lspconfig").setup({
         "jedi_language_server", -- python
         "erlangls",             -- erlang
         "jdtls",                -- java
+        "ltex",                 -- latex
     }
 })
-
-
 
 require("lspconfig").sumneko_lua.setup {}
 require("lspconfig").julials.setup {}
@@ -27,5 +26,5 @@ require("lspconfig").erlangls.setup {}
 require("lspconfig").bashls.setup {}
 require("lspconfig").jdtls.setup{
     root_dir = (require"lspconfig/util").root_pattern('build.xml', 'pom.xml', 'settings.gradle', 'settings.gradle.kts', '.git')
-
 }
+require("lspconfig").ltex.setup{}

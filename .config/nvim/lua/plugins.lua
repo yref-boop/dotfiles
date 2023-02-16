@@ -83,6 +83,7 @@ return packer.startup(function(use)
     }
 
     use 'lervag/vimtex'                         -- latex
+    vim.cmd("let g:vimtex_view_method = 'zathura'")
 
     use "TimUntersberger/neogit"                -- git support for nvim
     use { 'lewis6991/gitsigns.nvim',

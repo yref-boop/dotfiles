@@ -30,11 +30,26 @@ o.termguicolors = true          -- set terminal gui colors
 o.number = true                 -- show numberline
 o.relativenumber = true         -- show relative numbers
 
-
 -- neovide options
-
 vim.g.neovide_transparency = 0.97
 vim.g.neovide_hide_mouse_when_typing = 'true'
 vim.g.neovide_cursor_trail_size = 0.25
 
 vim.cmd("hi Normal guibg = #171617")
+
+-- disable arrow keys
+vim.cmd("nnoremap <Left> <nop>")
+vim.cmd("vnoremap <Left> <nop>")
+vim.cmd("inoremap <Left> <nop>")
+
+vim.cmd("nnoremap <Right> <nop>")
+vim.cmd("vnoremap <Right> <nop>")
+vim.cmd("inoremap <Right> <nop>")
+
+vim.cmd("nnoremap <Down> <nop>")
+vim.cmd("vnoremap <Down> <nop>")
+vim.cmd("inoremap <Down> <nop>")
+
+vim.cmd("nnoremap <Up> <nop>")
+vim.cmd("vnoremap <Up> <nop>")
+vim.cmd("inoremap <Up> <nop>")
