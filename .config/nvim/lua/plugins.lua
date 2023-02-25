@@ -76,6 +76,7 @@ return packer.startup(function(use)
             requires = 'nvim-lua/plenary.nvim'
     }
 
+    use "vale1410/vim-minizinc"
     use {                                       -- language server protocol
         "williamboman/mason.nvim",              -- lsp package manager
         "williamboman/mason-lspconfig.nvim",

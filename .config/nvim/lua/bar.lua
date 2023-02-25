@@ -3,11 +3,11 @@ aux_theme = function()
         darkgray = "#100910",
         gray     = "#727169",
         outerbg  = "#100910",
-        normal   = "#bc58bb",
-        insert   = "#eb82ab",
-        visual   = "#ef8c87",
-        replace  = "#d34f80",
-        command  = "#f9e2af",
+        normal   = "#ff8ce6",
+        insert   = "#f08cff",
+        command  = "#dd8cff",
+        visual   = "#ff988c",
+        replace  = "#ffc48c",
     }
     return {
         inactive = {
