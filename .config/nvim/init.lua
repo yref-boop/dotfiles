@@ -1,3 +1,6 @@
+require "config/keymaps"
+require "config/options"
+
 -- bootstrap lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -6,10 +9,27 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    "--branch=stable",
     lazypath,
   })
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup(plugins, opts)
+-- lazy options
+local options = {
+  defaults = { lazy = true },
+  install = { colorscheme = { catppuccin }},
+  change_detection = { notify = true },
+}
+
+-- ensure correct mappings
+vim.g.mapleader = " "
+
+require("lazy").setup(
+  {
+    -- load lua/plugins & lsp
+    {import = 'plugins'},
+    {import = 'plugins.lsp'}
+  },
+  options
+)
