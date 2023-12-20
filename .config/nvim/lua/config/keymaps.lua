@@ -1,11 +1,12 @@
+local vim = vim
 local o = vim.opt
 local c = vim.cmd
 
 -- space as leader
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 
 -- controls
-o.mouse = ""
+o.mouse = ''
 
 c("nnoremap <Left> <nop>")
 c("vnoremap <Left> <nop>")
@@ -26,4 +27,3 @@ c("inoremap <Up> <nop>")
 -- jump to next & previous diagnostics
 vim.keymap.set("n", "]g", vim.diagnostic.goto_next)
 vim.keymap.set("n", "[g", vim.diagnostic.goto_prev)
-

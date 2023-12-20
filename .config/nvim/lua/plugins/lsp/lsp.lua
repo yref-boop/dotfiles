@@ -34,21 +34,23 @@ local config = function()
       virtual_text = {
         spacing = 2,
         prefix = '󰑊',
-        format = format,
+        format = format
       },
-      signs = true,
       update_in_insert = false,
-      underline = true,
+      underline = true
     }
   )
+
+  -- show 󰑊 as signcolumn icon
+  local signs = {Error = '󰑊', Warn = '󰑊', Hint = '󰑊', Info = '󰑊'}
+  for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
+  end
 
   -- hover shows line diagnostics
   vim.o.updatetime = 750
   vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})]]
-
-
-
-
 
 end
 

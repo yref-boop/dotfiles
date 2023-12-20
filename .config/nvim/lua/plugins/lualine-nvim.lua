@@ -2,25 +2,25 @@ local sections = {
 
   lualine_a = {
     {
-      "mode",
-      separator = { left = "", right = "" },
+      'mode',
+      separator = { left = '', right = '' },
     },
 
     {
-      "filetype",
+      'filetype',
       colored = false,
       icon_only = true,
-      color = { fg = '#fde8e7', bg = '#100910'},
+      color = { fg = '#fde8e7', bg = '#100910'}
     },
 
     {"filename", color = "StatusLine"},
 
     {
       function()
-        return ""
+        return ''
       end,
       separator = { left = "", right = "" },
-    },
+    }
   },
 
   lualine_b = {
@@ -28,65 +28,45 @@ local sections = {
       "filesize",
       color = "StatusLine",
       separator = { right = "" },
-    },
+    }
   },
 
   lualine_c = {
     {
       "diagnostics",
       sources = { "nvim_lsp" },
-      sections = {
-        "error",
-        "warn",
-      },
-      diagnostic_color = {
-        error = { fg = '#820e2d', bg = '#0f111a' },
-        warn = { fg = 'DiagnosticWarn', bg = '#0f111a' },
-        info = { fg = 'DiaganosticInfo', bg = '#0f111a' },
-        hint = { fg = '#92CDE7', bg = '#0f111a' },
-      },
+      sections = { "error", "warn", "info", "hint" },
       colored = true,
       update_in_insert = true,
       always_visible = false,
-      symbols = {
-        error = "",
-        warn = "",
-      },
+      symbols = { error = '', warn = '', info = '', hint = '' }
+    }
+  },
+  lualine_x = {},
+  lualine_y = {
+    {
+      "diff",
+      symbols = { added = '', modified = '', removed = '' },
+      color = { fg = '#fde8e7', bg = '#100910'}
+    }
+  },
+  lualine_z = {
+    {
+      "branch",
+      icons_enabled = false,
+      separator = { left = "", right = "" }
     },
-
+    {
+      "location",
+      color = "StatusLine"
     },
-    lualine_x = {
-    },
-    lualine_y = {
-      {
-        "diff",
-        symbols = {
-          added = "",
-          modified = "~",
-          removed = "-",
-        },
-        color = "StatusLine",
-        separator = { left = ""},
-      },
-
-    },
-    lualine_z = {
-      {
-        "branch",
-        icons_enabled = false,
-        separator = { left = "", right = "" }
-      },
-      {
-        "location",
-        color = "StatusLine",
-      },
     {
       function()
-        return "" -- 
+        return ''
       end,
-      separator = { left = "", right = "" },
-    },
-  },
+      separator = { left = "", right = "" }
+    }
+  }
 }
 
 local config = function()

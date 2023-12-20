@@ -1,6 +1,9 @@
 require "config/keymaps"
 require "config/options"
 
+local vim = vim
+
+
 -- bootstrap lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -22,7 +25,7 @@ local options = {
   change_detection = { notify = true },
 }
 
--- ensure correct mappings
+-- set <space as leader>
 vim.g.mapleader = " "
 
 require("lazy").setup(

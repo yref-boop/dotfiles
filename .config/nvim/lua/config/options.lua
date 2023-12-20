@@ -1,40 +1,42 @@
-local o = vim.opt
+local vim = vim
+local opt = vim.opt
 
 -- tabs & indent
-o.tabstop = 2
-o.shiftwidth = 2
-o.softtabstop = 2
-o.smartindent = true
-o.breakindent = true
-o.expandtab = true
-o.autoindent = true
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.softtabstop = 2
+opt.smartindent = true
+opt.breakindent = true
+opt.expandtab = true
+opt.autoindent = true
 
 
 -- search & clip
-o.incsearch = false
-o.smartcase = true
-o.iskeyword:append("-")
-o.clipboard:append("unnamedplus")
+opt.incsearch = false
+opt.smartcase = true
+opt.iskeyword:append("-")
+opt.clipboard:append("unnamedplus")
 
 
 -- appearance
-o.number = true
-o.showmode = false
-o.relativenumber = true
-o.termguicolors  = true
-o.cmdheight = 1
-o.completeopt = "menuone,noinsert,noselect"
+opt.number = true
+opt.showmode = false
+opt.relativenumber = true
+opt.termguicolors  = true
+opt.cmdheight = 1
+opt.completeopt = "menuone,noinsert,noselect"
 vim.wo.fillchars ='eob: '
-o.list = true
-o.listchars:append "space:⋅"
-o.colorcolumn = '80'
+opt.list = true
+opt.listchars:append "space:⋅"
+opt.colorcolumn = '80'
+opt.guicursor = ""
 
 -- behaviour
-o.scrolloff = 10
-o.hidden = true
-o.errorbells = false
-o.swapfile = false
-o.backup = false
-o.undofile = true
-o.undodir = vim.fn.expand("~/.nvim/undodir")
-o.backspace = "indent,eol,start"
+opt.scrolloff = 10
+opt.hidden = true
+opt.errorbells = false
+opt.swapfile = false
+opt.backup = false
+opt.undofile = true
+opt.undodir = vim.fn.expand("~/.nvim/undodir")
+opt.backspace = "indent,eol,start"
