@@ -1,48 +1,82 @@
 local key = vim.keymap
 
 local config = function()
-  local telescope = require("telescope")
-  local actions   = require("telescope.actions")
 
-  telescope.setup()
+  -- safe imports
+  local telescope_setup, telescope = pcall(require, 'telescope')
+  if not telescope_setup
+    then return
+  end
+
+  local actions_setup, actions   = pcall(require, 'telescope.actions')
+  if not actions_setup
+    then return
+  end
+
+  -- custom mappings
+  telescope.setup({
+    defaults = {
+      mappings = {
+        i = {
+          ["<T-k>"] = actions.move_selection_previous,
+          ["<T-j>"] = actions.move_selection_next,
+          ["<T-q>"] = actions.send_selected_to_qflist + actions.open_qflist
+        }
+      }
+    }
+  })
+
+  -- more efficient search
   telescope.load_extension("fzf")
 
-  -- keymaps
 
-  local builtin = require('telescope.builtin')
+  local builtin = require ('telescope.builtin')
 
-  key.set ('n', '<leader>ff', builtin.find_files,
-    {desc = "fuzzy find files"})
-  key.set ('n', '<leader>fg', builtin.live_grep,
-    {desc = "find string in "})
+  -- telescope keymaps
+  key.set ('n', '<leader>ff', builtin.find_files, {})
+  key.set ('n', '<leader>fg', builtin.live_grep, {})
   key.set ('n', '<leader>fh', builtin.help_tags, {})
 
   -- lsp keymaps
-  key.set ('n', '<leader>fe', builtin.diagnostics,
-    { desc = "find errors" })
-  key.set ('n', '<leader>fd', builtin.lsp_definitions,
-    { desc = "find definition" })
-  key.set ('n', '<leader>ft', builtin.lsp_type_definitions,
-    { desc = "find type definition" })
-  key.set ('n', '<leader>fi', builtin.lsp_implementations,
-    { desc = "find implementation" })
+  key.set ('n', '<leader>fe', builtin.diagnostics, {})
+  key.set ('n', '<leader>fd', builtin.lsp_definitions, {})
+  key.set ('n', '<leader>ft', builtin.lsp_type_definitions, {})
+  key.set ('n', '<leader>fi', builtin.lsp_implementations, {})
 
   -- git keymaps
-  key.set ('n', '<leader>gc', builtin.git_commits,
-    { desc = "git commits" })
-  key.set ('n', '<leader>gb', builtin.git_branches,
-    { desc = "git branches" })
+  key.set ('n', '<leader>gc', builtin.git_commits, {})
+  key.set ('n', '<leader>gb', builtin.git_branches, {})
 
 
 end
 
 return {
-  'nvim-telescope/telescope.nvim', tag = '0.1.5',
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    "nvim-tree/nvim-web-devicons",
+  {
+    -- telescope
+    'nvim-telescope/telescope.nvim', tag = '0.1.5',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      "nvim-tree/nvim-web-devicons",
+    },
+    lazy = false,
+    config = config,
   },
-  lazy = false,
-  config = config,
+  {
+    -- telescope-ui
+    'nvim-telescope/telescope-ui-select.nvim',
+    lazy = false,
+    config = function ()
+      require("telescope").setup ({
+        extensions = {
+          ["ui-select"] = {
+            require("telescope.themes").get_dropdown {
+            },
+            codeactions = false,
+          }
+        }
+      })
+      require('telescope').load_extension('ui-select')
+    end
+  }
 }

@@ -5,9 +5,10 @@ local c = vim.cmd
 -- space as leader
 vim.g.mapleader = ' '
 
--- controls
+-- ignore mouse
 o.mouse = ''
 
+-- ignore arrows
 c("nnoremap <Left> <nop>")
 c("vnoremap <Left> <nop>")
 c("inoremap <Left> <nop>")

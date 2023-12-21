@@ -1,5 +1,3 @@
-local vim = vim
-
 local config = function()
 
   local lsp = require'lspconfig'
@@ -51,6 +49,13 @@ local config = function()
   -- hover shows line diagnostics
   vim.o.updatetime = 750
   vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
+  -- show info about symbol under cursor
+  vim.keymap.set ('n', 'K', vim.lsp.buf.hover, {})
+
+  -- code actions
+  vim.keymap.set ({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
+
 
 end
 
