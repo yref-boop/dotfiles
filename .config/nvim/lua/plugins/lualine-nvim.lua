@@ -1,3 +1,28 @@
+local theme = function ()
+  local colors = {
+    darkgray = '#100910',
+    gray     = '#727169',
+    outerbg  = '#100910',
+    command  = '#ffe6f6',
+    insert   = '#cba6f7',
+    normal   = '#f8b4ef',
+    replace  = '#f2cdcd',
+    visual   = '#b4befe',
+  }
+
+  return {
+    command = { a = { fg = colors.darkgray, bg = colors.command, gui = "bold" } },
+    inactive = { a = { fg = colors.gray, bg = colors.outerbg, gui = "bold" } },
+    insert = { a = { fg = colors.darkgray, bg = colors.insert, gui = "bold" } },
+    normal = {
+      a = { fg = colors.darkgray, bg = colors.normal, gui = "bold" },
+      b = { fg = colors.gray, bg = colors.outerbg },
+    },
+    replace = { a = { fg = colors.darkgray, bg = colors.replace, gui = "bold" } },
+    visual = { a = { fg = colors.darkgray, bg = colors.visual, gui = "bold" } },
+  }
+end
+
 local sections = {
 
   lualine_a = {
@@ -77,6 +102,7 @@ local config = function()
       globalstatus = false,
       disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
       always_divide_middle = true,
+      theme = theme()
     }
   }
 end
