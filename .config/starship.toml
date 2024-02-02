@@ -13,9 +13,9 @@ $git_branch\
 
 [username]
 show_always = true
-style_user = "#100910 bg:#ff8ce6"
-style_root = "#100910 bg:#ff8ce6"
-format = '[>]($style)'
+style_user = "#100910 bg:#ff8ce6 bold"
+style_root = "#100910 bg:#ff8ce6 bold"
+format = '[]($style)'
 
 [directory]
 style = "fg:#fde8e7 bg:#100910"

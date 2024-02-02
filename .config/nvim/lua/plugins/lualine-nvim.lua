@@ -1,3 +1,42 @@
+local words = function ()
+  local count = vim.fn.wordcount()
+  if count['visual_words'] then
+    return count['visual_words']
+  else
+    return count['words']
+  end
+end
+
+local bongo_cat = function ()
+
+  local left_bong = '΃'
+  local right_bong = '΀'
+  local left_up = '΁'
+  local right_up = '΂'
+  local bongo = left_up .. right_up
+
+  local press = function (bongo)
+    if (bongo:sub(0,0) == left_up) then
+      return left_bong .. right_up
+    else
+      return left_up .. right_bong
+    end
+  end
+
+  local move = vim.api.nvim_create_autocmd({'TextChanged'}, {
+    callback = function()
+    end
+  })
+
+  if move % 2 == 0 then
+    bongo = press (bongo)
+  end
+
+  return bongo
+
+end
+
+
 local theme = function ()
   local colors = {
     darkgray = '#100910',
@@ -67,7 +106,11 @@ local sections = {
       symbols = { error = '', warn = '', info = '', hint = '' }
     }
   },
-  lualine_x = {},
+  lualine_x = {
+    function ()
+      return ' '
+    end
+  },
   lualine_y = {
     {
       "diff",
@@ -79,15 +122,23 @@ local sections = {
     {
       "branch",
       icons_enabled = false,
+      color = 'StatusLine',
       separator = { left = "", right = "" }
     },
     {
       "location",
-      color = "StatusLine"
+      color = 'StatusLine'
     },
     {
-      function()
-        return ''
+      words,
+      separator = { left = "", right = "" }},
+    {
+      bongo_cat,
+      color = { bg = '#100910', fg = '#fde8e7'}
+    },
+    {
+      function ()
+        return ' '
       end,
       separator = { left = "", right = "" }
     }
