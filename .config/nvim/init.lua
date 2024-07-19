@@ -25,6 +25,8 @@ local options = {
 vim.g.mapleader = " "
 
 require("lazy").setup(
-  { },
+  {
+    {import = 'plugins'}
+  },
   options
 )
