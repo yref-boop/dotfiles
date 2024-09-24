@@ -1,4 +1,5 @@
 require "options"
+require "keybindings"
 
 -- bootstrap lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -17,7 +18,6 @@ vim.opt.rtp:prepend(lazypath)
 -- lazy configuration
 local options = {
   defaults = { lazy = true },
-  install = { colorscheme = { catppuccin }},
   change_detection = { notify = true },
 }
 
@@ -29,4 +29,4 @@ require("lazy").setup(
     {import = 'plugins'}
   },
   options
-  )
+)

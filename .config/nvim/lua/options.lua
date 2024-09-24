@@ -1,18 +1,9 @@
-local vim = vim
 local opt = vim.opt
 
 
 -- controls
 vim.g.mapleader = " "
 opt.mouse = ""
-vim.cmd('nnoremap <Left> <Nop>')
-vim.cmd('nnoremap <Down> <Nop>')
-vim.cmd('nnoremap <Up> <Nop>')
-vim.cmd('nnoremap <Right> <Nop>')
-vim.cmd('inoremap <Left> <Nop>')
-vim.cmd('inoremap <Down> <Nop>')
-vim.cmd('inoremap <Up> <Nop>')
-vim.cmd('inoremap <Right> <Nop>')
 
 
 -- tabs & indent
