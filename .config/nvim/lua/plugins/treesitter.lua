@@ -6,7 +6,6 @@ local config = function ()
       "python",
       "matlab",
       "latex",
-      "asm",
     },
     sync_install = true,
     highlight = { enable = true },

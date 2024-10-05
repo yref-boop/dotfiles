@@ -3,7 +3,6 @@ local config = function ()
   require'lspconfig'.clangd.setup{}
   require'lspconfig'.matlab_ls.setup{}
   require'lspconfig'.lua_ls.setup{}
-  require'lspconfig'.asm_lsp.setup{}
 end
 
 return {
