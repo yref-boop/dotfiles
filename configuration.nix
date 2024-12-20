@@ -13,6 +13,8 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   nixpkgs.config.allowUnfree = true;
+
+  hardware.opengl.enable = true;
   hardware.graphics = {
     enable = true;
   };
@@ -52,14 +54,25 @@
 
   console = {
     font = "Lat2-Terminus16";
-    keyMap = "pt-latin9";
-  #   useXkbConfig = true; # use xkb.options in tty.
+    keyMap = "us";
+  # useXkbConfig = true; # use xkb.options in tty.
   };
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
+  
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
- 
+  environment.sessionVariables = {
+    WL_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+  };
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals =[ pkgs.xdg-desktop-portal-gtk ];
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -71,10 +84,14 @@
   # Enable sound.
   # hardware.pulseaudio.enable = true;
   # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
@@ -88,7 +105,7 @@
     ];
   };
 
-  # programs.firefox.enable = true;
+  programs.firefox.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -96,6 +113,12 @@
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
+
+    kitty
+    pkgs.mako
+    libnotify
+    swww
+    wofi
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
