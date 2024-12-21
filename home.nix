@@ -142,7 +142,6 @@
       opt.cmdheight = 1
       opt.completeopt = "menuone,noinsert,noselect"
       opt.list = true
-      opt.colorcolumn = '80'
       vim.cmd('hi Normal guibg=#00000000')
       opt.laststatus = 0
 
@@ -162,8 +161,46 @@
       opt.backspace = "indent,eol,start"
     '';
 
-    plugins = with pkgs.vimPlugins; [
-    ];
+    plugins = let
+      nvim-treesitter-with-plugins = pkgs.vimPlugins.nvim-treesitter.withPlugins (treesitter-plugins: with treesitter-plugins; [
+        c
+        nix
+        python
+        latex
+      ]);
+    in
+      with pkgs.vimPlugins; [
+        {
+          plugin = lualine-nvim;
+          type = "lua";
+          config = ''require('lualine').setup()'';
+        }
+        {
+          plugin = gitsigns-nvim;
+          type = "lua";
+          config = ''require('gitsigns').setup()'';
+        }
+        {
+          plugin = nvim-lspconfig;
+          type = "lua";
+          config = ''
+            require'lspconfig'.pyright.setup{}
+            require'lspconfig'.clangd.setup{}
+            require'lspconfig'.texlab.setup{}
+            require'lspconfig'.nil_ls.setup{}
+          '';
+        }
+        {
+          plugin = nvim-treesitter-with-plugins;
+          type = "lua";
+          config = ''require('nvim-treesitter').setup()'';
+        }
+        {
+          plugin = telescope-nvim;
+          type = "lua";
+          config = ''require('telescope').setup()'';
+        }
+      ];
 
   };
 
