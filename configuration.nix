@@ -59,7 +59,7 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-  
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -114,7 +114,7 @@
     git
 
     kitty
-    pkgs.mako
+    mako
     libnotify
     swww
     wofi
