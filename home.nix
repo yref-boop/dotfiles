@@ -85,12 +85,65 @@
       font_family = "Maple Mono";
       font_size = "12.5";
       disable_ligatures = "never";
+      window_padding_width = "4";
     };
   };
 
   programs.starship= {
     enable = true;
     enableBashIntegration = true;
+    # special characters  
+    # [](bg:#000000 fg:#000000)\\
+
+    # color_white = '#ffffff'
+    # color_black = '#000000'
+    # color_yellow = '#F18A31'
+    # color_orange = '#E45743'
+    # color_salmon = '#D43382'
+    # color_pink = '#B315CD'
+    # color_purple = '#BB65F0'
+    # color_indigo = '#AA85F1'
+    # color_blue = '#4166ED'
+
+    settings = {
+      add_newline = false;
+      command_timeout = 5000;
+      format = ''
+        ╭╴\\
+        [ ](bg:#000000 fg:#FFFFFF)\\
+        $directory\\
+        $git_branch\\
+        $git_status\\
+        $git_metrics\\
+        ╰─ '';
+      directory = {
+        truncation_length = 1;
+        truncate_to_repo = false;
+        truncation_symbol = "…/";
+        format = "[ $path ]($style)";
+        style = "bg:#000000 fg:#FFFFFF";
+      };
+      git_branch = {
+        format = "[ $symbol$branch(:$remote_branch) ]($style)";
+        symbol = " ";
+        style = "bg:#000000 fg:#FFFFFF";
+      };
+      git_status = {
+        format = "[$all_status]($style)";
+        style = "bg:#000000 fg:#FFFFFF";
+      };
+      git_metrics = {
+        format = "([+$added]($added_style))[]($added_style)";
+        added_style = "fg:#FFFFFF bg:#000000";
+        deleted_style = "fg:FFFFFF bg:000000";
+        disabled = false;
+      };
+      cmd_duration = {
+        format = "[  $duration ]($style)";
+        style = "bg:#000000 fg:#FFFFFF";
+      };
+    };
+
   };
 
   wayland.windowManager.hyprland = {
