@@ -80,14 +80,23 @@
     enable = true;
     settings = {
 
+
       # bindings
       "$mod" = "SUPER";
+
       bind = [
-        "$mod, F, exec, firefox"
-        "$mod, C, killactive"
         "$mod, Q, exec,kitty"
+        "$mod, C, killactive"
         "$mod, M, exit"
-        ", Print, exec, grimblast copy area"
+        "$mod, V, togglefloating"
+        "$mod, R, exec, wofi --show drun"
+        "$mod, P, pseudo"
+        "$mod, T, togglesplit"
+
+        "$mod, H, movefocus, l"
+        "$mod, J, movefocus, d"
+        "$mod, K, movefocus, u"
+        "$mod, L, movefocus, r"
       ]
       ++ (
         # workspaces
