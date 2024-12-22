@@ -74,7 +74,15 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  programs.kitty.enable = true;
+  programs.kitty = {
+    enable = true;
+    settings = {
+      background_opacity = "0.8";
+      font_family = "Maple Mono";
+      font_size = "12.5";
+      disable_ligatures = "never";
+    };
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;
