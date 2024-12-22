@@ -74,6 +74,10 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.bash = {
+    enable = true;
+  };
+
   programs.kitty = {
     enable = true;
     settings = {
@@ -82,6 +86,11 @@
       font_size = "12.5";
       disable_ligatures = "never";
     };
+  };
+
+  programs.starship= {
+    enable = true;
+    enableBashIntegration = true;
   };
 
   wayland.windowManager.hyprland = {
