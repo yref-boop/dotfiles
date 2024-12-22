@@ -80,6 +80,42 @@
     enable = true;
     settings = {
 
+      exec-once = "swww init && swww img ~/mídia/fundo.png";
+
+      general = {
+        gaps_in = "13";
+        gaps_out = "26";
+        border_size= "0";
+      };
+
+      misc = {
+        force_default_wallpaper = "0";
+        disable_hyprland_logo = "true";
+      };
+
+      decoration = {
+        rounding = "20";
+        blur = {
+          enabled = "true";
+          size = "3";
+          passes = "1";
+        };
+        shadow = {
+          enabled = "true";
+          range = "7";
+        };
+      };
+
+      animations = {
+        enabled = "true";
+      };
+
+      input = {
+        kb_layout = "us, pt";
+        kb_options = "grp:win_space_toggle";
+        follow_mouse = "1";
+        touchpad.natural_scroll = "false";
+      };
 
       # bindings
       "$mod" = "SUPER";
