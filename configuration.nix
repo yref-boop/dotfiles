@@ -52,8 +52,7 @@
   i18n.supportedLocales = [ "all" ];
 
   console = {
-    font = "Lat2-Terminus16";
-    keyMap = "us";
+    keyMap = "pt-latin1";
   # useXkbConfig = true; # use xkb.options in tty.
   };
 
@@ -124,6 +123,9 @@
     swww
     wofi
     starship
+    hyprpicker
+    xclip
+    zathura
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
