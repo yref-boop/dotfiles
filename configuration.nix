@@ -44,10 +44,10 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "pt_PT";
+  i18n.defaultLocale = "pt_PT.UTF-8";
   i18n.extraLocaleSettings = {
-    LANGUAGE = "pt_PT";
-    LC_ALL = "pt_PT";
+    LANGUAGE = "pt_PT.UTF-8";
+    LC_ALL = "pt_PT.UTF-8";
   };
   i18n.supportedLocales = [ "all" ];
 
@@ -114,10 +114,10 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    kitty
     wget
     git
 
-    kitty
     mako
     libnotify
     swww
