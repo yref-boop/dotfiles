@@ -104,6 +104,7 @@
   };
 
   programs.firefox.enable = true;
+  programs.tmux.enable = true;
 
   fonts.packages = with pkgs; [
     maple-mono
