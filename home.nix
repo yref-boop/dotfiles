@@ -149,8 +149,7 @@
     enable = true;
     keyMode = "vi";
     customPaneNavigationAndResize = true;
-    plugins = with pkgs; [
-      tmuxPlugins.catppuccin
+    plugins = with pkgs.tmuxPlugins; [
     ];
     extraConfig = ''
       unbind r
@@ -294,6 +293,7 @@
       opt.list = true
       vim.cmd('hi Normal guibg=#00000000')
       opt.laststatus = 0
+      opt.showmode = false
 
       -- blank indicators
       opt.listchars:append "space:⋅"
@@ -323,7 +323,47 @@
         {
           plugin = lualine-nvim;
           type = "lua";
-          config = ''require('lualine').setup()'';
+          config = ''
+            local theme = require'lualine.themes.auto'
+            theme.inactive.c.bg = '#00000000'
+            theme.visual.c.bg = '#00000000'
+            theme.replace.c.bg = '#00000000'
+            theme.normal.c.bg = '#00000000'
+            theme.insert.c.bg = '#00000000'
+            theme.command.c.bg = '#00000000'
+            require('lualine').setup{
+              options = {
+                icons_enabled = true,
+                theme = theme,
+                component_separators = '|',
+                section_separators = { left = '', right = '' },
+                disabled_filetypes = {},
+                globalstatus = false,
+              },
+              sections = {
+                lualine_a = {{
+                  'mode',
+                  separator = { left = '', right = ''},
+                }},
+                lualine_b = {'filename'},
+                lualine_c = {{
+                  'diff',
+                  color = {bg = '#00000000'}
+                }},
+                lualine_x = {{
+                  'diagnostics',
+                  color = {bg = '#00000000'}
+                }},
+                lualine_y = {'progress'},
+                lualine_z = {{
+                  'location',
+                  separator = { left = '', right = ''},
+                }}
+              },
+              tabline = {},
+              extensions = {}
+              }
+          '';
         }
         {
           plugin = gitsigns-nvim;
