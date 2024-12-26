@@ -127,6 +127,11 @@
     hyprpicker
     xclip
     zathura
+
+    # lsps
+    pyright
+    texlab
+    nil
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
