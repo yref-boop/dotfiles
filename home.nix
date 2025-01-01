@@ -388,6 +388,11 @@
           type = "lua";
           config = ''require('telescope').setup()'';
         }
+        {
+          plugin = vimtex;
+          type = "lua";
+          config = ''require('vimtex').setup()'';
+        }
       ];
 
   };

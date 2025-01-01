@@ -125,8 +125,10 @@
     wofi
     starship
     hyprpicker
-    xclip
+    wl-clipboard
     zathura
+
+    tesseract4
 
     # lsps
     pyright
