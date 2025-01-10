@@ -128,12 +128,17 @@
     wl-clipboard
     zathura
 
+    texlive.combined.scheme-full
     tesseract4
 
     # lsps
     pyright
     texlab
     nil
+
+    # games
+    prismlauncher
+    inkscape
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
