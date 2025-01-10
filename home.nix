@@ -250,6 +250,15 @@
     };
   };
 
+  programs.zathura = {
+    enable = true;
+    options = {
+      recolor = "true";
+      recolor-keephue = "true";
+      scroll-page-aware = "true";
+      font = "Maple Mono 12";
+    };
+  };
 
   programs.neovim = {
     enable = true;
@@ -391,7 +400,9 @@
         {
           plugin = vimtex;
           type = "lua";
-          config = ''require('vimtex').setup()'';
+          config = ''
+                vim.g.vimtex_view_method = "zathura"
+          '';
         }
       ];
 
