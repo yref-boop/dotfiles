@@ -129,15 +129,12 @@
     zathura
 
     texlive.combined.scheme-full
-    tesseract4
 
     # lsps
-    pyright
     texlab
     nil
 
     # games
-    prismlauncher
     inkscape
   ];
 
