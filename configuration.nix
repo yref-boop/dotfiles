@@ -119,6 +119,9 @@
     wget
     git
 
+    hyprshade
+    hyprshot
+
     mako
     libnotify
     swww
@@ -132,6 +135,7 @@
 
     # lsps
     texlab
+    jdt-language-server
     nil
 
     # games

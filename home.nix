@@ -182,7 +182,8 @@
     enable = true;
     settings = {
 
-      exec-once = "swww init && swww img ~/mídia/fundo.png";
+      exec-once = "swww init && swww img ~/mídia/fundo.png && hyprshade on blue-light-filter
+";
 
       general = {
         gaps_in = "13";
@@ -316,6 +317,13 @@
       opt.undofile = true
       opt.undodir = vim.fn.expand("~/.nvim/undodir")
       opt.backspace = "indent,eol,start"
+
+      -- telescope
+	local builtin = require('telescope.builtin')
+	vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+	vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+	vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+	vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
     '';
 
     plugins = let
@@ -324,6 +332,7 @@
         nix
         python
         latex
+        java
       ]);
     in
       with pkgs.vimPlugins; [
@@ -385,6 +394,7 @@
             require'lspconfig'.clangd.setup{}
             require'lspconfig'.texlab.setup{}
             require'lspconfig'.nil_ls.setup{}
+            require'lspconfig'.jdtls.setup{}
           '';
         }
         {
