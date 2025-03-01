@@ -14,6 +14,11 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  # auto-mount external drives
+  services.devmon.enable = true;
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+
   hardware.graphics = {
     enable = true;
   };
