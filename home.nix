@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -149,8 +149,6 @@
     enable = true;
     keyMode = "vi";
     customPaneNavigationAndResize = true;
-    plugins = with pkgs.tmuxPlugins; [
-    ];
     extraConfig = ''
       unbind r
       bind r source-file ~/.config/tmux/tmux.conf
@@ -182,8 +180,7 @@
     enable = true;
     settings = {
 
-      exec-once = "swww init && swww img ~/mídia/fundo.png && hyprshade on blue-light-filter
-";
+      exec-once = "swww init && swww img ~/mídia/fundo.png && hyprshade on blue-light-filter";
 
       general = {
         gaps_in = "13";
@@ -319,11 +316,11 @@
       opt.backspace = "indent,eol,start"
 
       -- telescope
-	local builtin = require('telescope.builtin')
-	vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-	vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-	vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-	vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+      local builtin = require('telescope.builtin')
+      vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+      vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+      vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+      vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
     '';
 
     plugins = let
