@@ -76,6 +76,16 @@
 
   programs.bash = {
     enable = true;
+    initExtra = ''
+      function y() {
+        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+        yazi "$@" --cwd-file="$tmp"
+        if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+          builtin cd -- "$cwd"
+        fi
+        rm -f -- "$tmp"
+      }
+    '';
   };
 
   programs.kitty = {
@@ -180,7 +190,7 @@
     enable = true;
     settings = {
 
-      exec-once = "swww init && swww img ~/mídia/fundo.png && hyprshade on blue-light-filter";
+      exec-once = "swww init && swww img ~/mídia/fundo.png && hyprshade on mono";
 
       general = {
         gaps_in = "13";
@@ -194,15 +204,15 @@
       };
 
       decoration = {
-        rounding = "20";
+        rounding = "25";
         blur = {
           enabled = "true";
-          size = "3";
-          passes = "1";
+          size = "15";
+          passes = "2";
         };
         shadow = {
           enabled = "true";
-          range = "7";
+          range = "10";
         };
       };
 
@@ -216,6 +226,11 @@
         follow_mouse = "1";
         touchpad.natural_scroll = "false";
       };
+
+      # standalone
+      #input-field = {
+      #  monitor=",1920x1080,auto,1,bitdepth,8";
+      #  };
 
       # bindings
       "$mod" = "SUPER";
