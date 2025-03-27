@@ -249,6 +249,14 @@
         "$mod, J, movefocus, d"
         "$mod, K, movefocus, u"
         "$mod, L, movefocus, r"
+
+        "$mod SHIFT, right, resizeactive, 20 0"
+        "$mod SHIFT, left, resizeactive, -20 0"
+        "$mod SHIFT, up, resizeactive, 0 -20"
+        "$mod SHIFT, down, resizeactive, 0 20"
+
+        "$mod SHIFT, mouse:272, movewindow"
+        "$mod SHIFT, mouse:273, resizeactive"
       ]
       ++ (
         # workspaces
