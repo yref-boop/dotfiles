@@ -213,6 +213,7 @@
         shadow = {
           enabled = "true";
           range = "10";
+          ignore_window = "false";
         };
       };
 
@@ -228,9 +229,9 @@
       };
 
       # standalone
-      #input-field = {
-      #  monitor=",1920x1080,auto,1,bitdepth,8";
-      #  };
+      # input-field = {
+      #   monitor=",1920x1080,auto,1,bitdepth,8";
+      # };
 
       # bindings
       "$mod" = "SUPER";
