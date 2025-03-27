@@ -1,17 +1,13 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
+# help @
+#   configuration.nix(5) man page
+#   https://search.nixos.org/options
+#   NixOS manual (`nixos-help`)
 
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
+  imports = [./hardware-configuration.nix]; # hardware scan
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   nixpkgs.config.allowUnfree = true;
 
   # auto-mount external drives
@@ -19,36 +15,42 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
+  # nvidia configuration
   hardware.graphics = {
     enable = true;
   };
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false; 
+    powerManagement.enable = false;
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  # Use the systemd-boot EFI boot loader.
+  # systemd-boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  # network
+  networking = {
+    hostName = "nixos";
+    networkmanager.enable = true;
+  };
 
-  # Set your time zone.
+  # ssh daemon.
+  # services.openssh.enable = true;
+
+  # firewall
+  # networking.firewall = {
+  #   allowedTCPPorts = [ ... ];
+  #   allowedUDPPorts = [ ... ];
+  # };
+  # networking.firewall.enable = false;
+
+  # internationalisation
   time.timeZone = "Europe/Madrid";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "pt_PT.UTF-8";
   i18n.extraLocaleSettings = {
     LANGUAGE = "pt_PT.UTF-8";
@@ -58,12 +60,9 @@
 
   console = {
     keyMap = "pt-latin1";
-  # useXkbConfig = true; # use xkb.options in tty.
   };
 
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
+  # windowing system
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -77,16 +76,7 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals =[ pkgs.xdg-desktop-portal-gtk ];
 
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  # Enable sound.
-  # hardware.pulseaudio.enable = true;
-  # OR
+  # sound
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -96,30 +86,30 @@
     jack.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # user account (password set with ‘passwd’)
   users.users.yref-boop= {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" ];
     packages = with pkgs; [
       tree
     ];
   };
-
-  programs.firefox.enable = true;
-  programs.tmux.enable = true;
 
   fonts.packages = with pkgs; [
     maple-mono
     nerdfonts
   ];
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # touchpad
+  services.libinput.enable = true;
+
+  programs.firefox.enable = true;
+  programs.tmux.enable = true;
+
+  # package management (search: $ nix search wget)
   environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+
+    neovim
     kitty
     wget
     git
@@ -138,6 +128,7 @@
     texlab
     jdt-language-server
     nil
+    python314
     ripgrep
 
     # image
@@ -154,48 +145,8 @@
     yazi
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
-
-  # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
-  # to actually do that.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "24.11"; # Did you read the comment?
+  # first verison of NixOs installed, (!!) not to be changed (!!)
+  system.stateVersion = "24.11";
 
 }
 
