@@ -124,15 +124,11 @@
     wget
     git
 
-    hyprshade
-    hyprshot
-
     mako
     libnotify
     swww
     wofi
     starship
-    hyprpicker
     wl-clipboard
     zathura
 
@@ -142,9 +138,20 @@
     texlab
     jdt-language-server
     nil
+    ripgrep
 
-    # games
+    # image
+    hyprpicker
+    hyprshade
+    hyprshot
     inkscape
+
+    # data management
+    libarchive
+    kiwix
+    gallery-dl
+    yt-dlp
+    yazi
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
