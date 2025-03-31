@@ -136,6 +136,8 @@
     hyprshade
     hyprshot
     inkscape
+    imagemagick
+    calibre
 
     # data management
     libarchive
