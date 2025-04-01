@@ -416,6 +416,7 @@
             require'lspconfig'.texlab.setup{}
             require'lspconfig'.nil_ls.setup{}
             require'lspconfig'.jdtls.setup{}
+            require'lspconfig'.gleam.setup{}
           '';
         }
         {
