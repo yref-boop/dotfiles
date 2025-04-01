@@ -114,6 +114,10 @@
     wget
     git
 
+    # fetch
+    fastfetch
+    hyfetch
+
     mako
     libnotify
     swww

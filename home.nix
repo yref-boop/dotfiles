@@ -25,7 +25,6 @@
   #
   # window manager
   #
-
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -115,7 +114,6 @@
   #
   # PROGRAMS
   #
-
   programs = {
 
     bash = {
@@ -313,6 +311,7 @@
           python
           latex
           java
+          gleam
         ]);
       in
         with pkgs.vimPlugins; [
