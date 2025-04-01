@@ -3,12 +3,16 @@
 #   https://search.nixos.org/options
 #   NixOS manual (`nixos-help`)
 
-{ config, lib, pkgs, ... }:
+{ inputs, config, lib, pkgs, ... }:
 
 {
-  imports = [./hardware-configuration.nix]; # hardware scan
+  imports = [
+    ./hardware-configuration.nix  # hardware scan
+  ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+  };
 
   # auto-mount external drives
   services.devmon.enable = true;
@@ -63,9 +67,8 @@
   };
 
   # windowing system
-  programs.hyprland = {
+  programs.niri = {
     enable = true;
-    xwayland.enable = true;
   };
 
   environment.sessionVariables = {
@@ -114,7 +117,8 @@
     wget
     git
 
-    # fetch
+    alacritty
+
     fastfetch
     hyfetch
 
