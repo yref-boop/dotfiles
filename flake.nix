@@ -31,7 +31,12 @@
         inherit system;
         modules = [
           # overlays-module for "pkgs.unstable" availability
-          ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+          ({ config, pkgs, ... }: { nixpkgs.overlays = [
+              overlay-unstable
+              niri.overlays.niri
+            ];
+          programs.niri.package = pkgs.niri-unstable;
+          })
           ./configuration.nix
         ];
       };
