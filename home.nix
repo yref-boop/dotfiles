@@ -25,89 +25,13 @@
   #
   # window manager
   #
-  wayland.windowManager.hyprland = {
+  programs.niri = {
     enable = true;
+    # home-manager settings @https://github.com/sodiboo/niri-flake/blob/main/docs.md#homemodulesconfig
     settings = {
-
-      exec-once = "swww init && swww img ~/mídia/fundo.png && hyprshade on mono";
-
-      general = {
-        gaps_in = "13";
-        gaps_out = "26";
-        border_size= "0";
-      };
-
-      misc = {
-        force_default_wallpaper = "0";
-        disable_hyprland_logo = "true";
-      };
-
-      decoration = {
-        rounding = "25";
-        blur = {
-          enabled = "true";
-          size = "15";
-          passes = "2";
-        };
-        shadow = {
-          enabled = "true";
-          range = "10";
-          ignore_window = "false";
-        };
-      };
-
-      animations = {
-        enabled = "true";
-      };
-
-      input = {
-        kb_layout = "us, pt";
-        kb_options = "grp:win_space_toggle";
-        follow_mouse = "1";
-        touchpad.natural_scroll = "false";
-      };
-
-      # standalone
-      # input-field = {
-      #   monitor=",1920x1080,auto,1,bitdepth,8";
-      # };
-
-      # bindings
-      "$mod" = "SUPER";
-
-      bind = [
-        "$mod, Q, exec,kitty"
-        "$mod, C, killactive"
-        "$mod, M, exit"
-        "$mod, V, togglefloating"
-        "$mod, R, exec, wofi --show drun"
-        "$mod, P, pseudo"
-        "$mod, T, togglesplit"
-
-        "$mod, H, movefocus, l"
-        "$mod, J, movefocus, d"
-        "$mod, K, movefocus, u"
-        "$mod, L, movefocus, r"
-
-        "$mod SHIFT, right, resizeactive, 20 0"
-        "$mod SHIFT, left, resizeactive, -20 0"
-        "$mod SHIFT, up, resizeactive, 0 -20"
-        "$mod SHIFT, down, resizeactive, 0 20"
-
-        "$mod SHIFT, mouse:272, movewindow"
-        "$mod SHIFT, mouse:273, resizeactive"
-      ]
-      ++ (
-        # workspaces
-        # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
-        builtins.concatLists (builtins.genList (i:
-            let ws = i + 1;
-            in [
-              "$mod, code:1${toString i}, workspace, ${toString ws}"
-              "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-            ]
-        )9)
-      );
+      layout = { gaps = 14;};
+      binds = {"Mod+K".action.spawn = "kitty";};
+      binds = {"Mod+F".action.spawn = "firefox";};
     };
   };
 

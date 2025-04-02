@@ -17,7 +17,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, niri, ... }:
+  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, niri, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -37,6 +37,7 @@
             ];
           programs.niri.package = pkgs.niri-unstable;
           })
+          niri.nixosModules.niri
           ./configuration.nix
         ];
       };
@@ -44,7 +45,9 @@
     homeConfigurations = {
       yref-boop = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+        modules = [
+          niri.homeModules.niri
+          ./home.nix ];
       };
     };
   };
