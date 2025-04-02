@@ -98,10 +98,7 @@
     ];
   };
 
-  fonts.packages = with pkgs; [
-    maple-mono
-    nerdfonts
-  ];
+  fonts.packages = [ ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.unstable.maple-mono);
 
   # touchpad
   services.libinput.enable = true;
