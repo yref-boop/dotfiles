@@ -129,6 +129,10 @@
 
     texlive.combined.scheme-full
 
+    telegram-desktop
+
+    swww
+
     # lsps
     texlab
     jdt-language-server
