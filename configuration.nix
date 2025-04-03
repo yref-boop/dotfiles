@@ -119,6 +119,8 @@
     fastfetch
     hyfetch
 
+    ripgrep
+
     mako
     libnotify
     swww
@@ -134,11 +136,14 @@
     swww
 
     # lsps
-    texlab
-    jdt-language-server
-    nil
     python314
-    ripgrep
+    clang-tools
+    texlab
+    nil
+    jdt-language-server
+    gleam
+    ocamlPackages.lsp
+    haskellPackages.lsp
 
     # image
     hyprpicker
