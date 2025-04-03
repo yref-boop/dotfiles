@@ -39,8 +39,8 @@
           # repeat-rate = 25;
           # track-layout = "window";
           xkb = {
-            # layout = "us, pt";
-            # options = "grp:win_space_toggle";
+            layout = "us, pt";
+            options = "grp:win_space_toggle";
           };
         };
         touchpad = {
@@ -62,7 +62,7 @@
           # scroll-method = "no-scroll"
         };
         trackpoint = {
-          # off
+          # off = true
           # natural-scroll
           # accel-speed 0.2
           # accel-profile "flat"
@@ -177,7 +177,9 @@
 
       };
 
-      spawn-at-startup = [ ];
+      spawn-at-startup = [
+         { command = ["swww-daemon"]; }
+      ];
 
       screenshot-path = "~/mídia/capturas/%Y-%m-%d-%H-%M-%S.png";
 
@@ -248,7 +250,7 @@
         TERMINAL = "kitty";
       };
       cursor = {
-        size = 10;
+        size = 5;
       };
 
       prefer-no-csd = true;
@@ -260,7 +262,7 @@
         "Mod+Slash".action.show-hotkey-overlay = { };
 
         "Mod+T".action.spawn = "kitty";
-        "Mod+D".action.spawn = "firefox";
+        "Mod+D".action.spawn = ["wofi" "--show" "run"];
 
         "Mod+Q".action.close-window = [];
 
@@ -599,6 +601,8 @@
           latex
           java
           gleam
+          haskell
+          ocaml
         ]);
       in
         with pkgs.vimPlugins; [
@@ -662,12 +666,14 @@
               require'lspconfig'.nil_ls.setup{}
               require'lspconfig'.jdtls.setup{}
               require'lspconfig'.gleam.setup{}
+              require'lspconfig'.hls.setup{}
+              require'lspconfig'.ocamllsp.setup{}
             '';
           }
           {
             plugin = nvim-treesitter-with-plugins;
             type = "lua";
-            config = ''require('nvim-treesitter').setup()'';
+            config = ''require('nvim-treesitter.configs').setup({ highlight = { enable = true, }, })'';
           }
           {
             plugin = telescope-nvim;
