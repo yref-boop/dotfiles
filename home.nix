@@ -536,10 +536,6 @@
       vimAlias = true;
       vimdiffAlias = true;
 
-      # [TODO]: call  catppuccin
-      #           AFTER color_override (on plugins)
-      #           BEFORE highlight recolor (extraLuaConfig)
-
       extraLuaConfig = ''
         local opt = vim.opt
 
@@ -610,6 +606,10 @@
       in
         with pkgs.vimPlugins; [
           {
+            plugin = nvim-web-devicons;
+            type = "lua";
+          }
+          {
             plugin = lualine-nvim;
             type = "lua";
             config = ''
@@ -634,7 +634,7 @@
                     'mode',
                     separator = { left = '', right = ''},
                   }},
-                  lualine_b = {'filename'},
+                  lualine_b = { { 'filename', }, },
                   lualine_c = {{
                     'diff',
                     color = {bg = '#00000000'}
@@ -662,16 +662,26 @@
           {
             plugin = catppuccin-nvim;
             type = "lua";
-            config = ''require('catppuccin').setup({
-              transparent_background = true,
-              color_overrides = {
-                mocha = {
-                  text = "#ffffff",
+            config = ''
+              require('catppuccin').setup({
+                transparent_background = true,
+                color_overrides = {
+                  mocha = {
+                    text = "#ffffff",
+                    crust = "#000000",
+                  },
                 },
-              },
-            })
-            vim.cmd[[colorscheme catppuccin]]
-            vim.cmd('hi Normal guibg=#00000000')
+              })
+
+              vim.cmd[[colorscheme catppuccin]]
+              vim.cmd('hi Normal guibg=#00000000')
+
+              vim.cmd [[
+                hi DiagnosticUnderlineError gui=undercurl
+                hi DiagnosticUnderlineWarn gui=undercurl
+                hi DiagnosticUnderlineHint gui=undercurl
+                hi DiagnosticUnderlineInfo gui=undercurl
+              ]]
             '';
           }
           {
@@ -701,9 +711,7 @@
           {
             plugin = vimtex;
             type = "lua";
-            config = ''
-                  vim.g.vimtex_view_method = "zathura"
-            '';
+            config = '' vim.g.vimtex_view_method = "zathura" '';
           }
         ];
       };
