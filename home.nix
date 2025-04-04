@@ -634,7 +634,10 @@
                     'mode',
                     separator = { left = '', right = ''},
                   }},
-                  lualine_b = { { 'filename', }, },
+                  lualine_b = {{
+                    'filename',
+                    color = {bg = '#00000000'},
+                  }},
                   lualine_c = {{
                     'diff',
                     color = {bg = '#00000000'}
@@ -643,7 +646,10 @@
                     'diagnostics',
                     color = {bg = '#00000000'}
                   }},
-                  lualine_y = {'progress'},
+                  lualine_y = {{
+                    'progress',
+                    color = {bg = '#00000000'},
+                  }},
                   lualine_z = {{
                     'location',
                     separator = { left = '', right = ''},
@@ -668,7 +674,6 @@
                 color_overrides = {
                   mocha = {
                     text = "#ffffff",
-                    crust = "#000000",
                   },
                 },
               })
