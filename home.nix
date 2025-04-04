@@ -613,11 +613,7 @@
             config = ''
               local theme = require'lualine.themes.auto'
               theme.inactive.c.bg = '#00000000'
-              theme.visual.c.bg = '#00000000'
-              theme.replace.c.bg = '#00000000'
               theme.normal.c.bg = '#00000000'
-              theme.insert.c.bg = '#00000000'
-              theme.command.c.bg = '#00000000'
               require('lualine').setup{
                 options = {
                   icons_enabled = true,
