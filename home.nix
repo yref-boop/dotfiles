@@ -559,6 +559,7 @@
         opt.clipboard:append("unnamedplus")
 
         -- appearance
+        vim.cmd[[colorscheme catppuccin]]
         opt.number = true
         opt.showmode = true
         opt.relativenumber = true
@@ -655,6 +656,11 @@
             plugin = gitsigns-nvim;
             type = "lua";
             config = ''require('gitsigns').setup()'';
+          }
+          {
+            plugin = catppuccin-nvim;
+            type = "lua";
+            config = ''require('catppuccin').setup()'';
           }
           {
             plugin = nvim-lspconfig;
