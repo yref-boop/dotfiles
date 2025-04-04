@@ -536,6 +536,10 @@
       vimAlias = true;
       vimdiffAlias = true;
 
+      # [TODO]: call  catppuccin
+      #           AFTER color_override (on plugins)
+      #           BEFORE highlight recolor (extraLuaConfig)
+
       extraLuaConfig = ''
         local opt = vim.opt
 
@@ -559,7 +563,6 @@
         opt.clipboard:append("unnamedplus")
 
         -- appearance
-        vim.cmd[[colorscheme catppuccin]]
         opt.number = true
         opt.showmode = true
         opt.relativenumber = true
@@ -567,7 +570,6 @@
         opt.cmdheight = 1
         opt.completeopt = "menuone,noinsert,noselect"
         opt.list = true
-        vim.cmd('hi Normal guibg=#00000000')
         opt.laststatus = 0
         opt.showmode = false
 
@@ -656,7 +658,16 @@
           {
             plugin = catppuccin-nvim;
             type = "lua";
-            config = ''require('catppuccin').setup()'';
+            config = ''require('catppuccin').setup({
+              color_overrides = {
+                mocha = {
+                  text = "#ffffff",
+                },
+              },
+            })
+            vim.cmd[[colorscheme catppuccin]]
+            vim.cmd('hi Normal guibg=#00000000')
+            '';
           }
           {
             plugin = nvim-lspconfig;
