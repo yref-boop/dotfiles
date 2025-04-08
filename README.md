@@ -1,5 +1,8 @@
 ## dotfiles
 <div align="center">
+<img src="https://github.com/yref-boop/dotfiles/blob/main/media/nix-rainbow.svg">
+
+
 this repo stores all configuration files of my linux system!
   
 its quite simple and not very flashy, but lately i'm digging a more _minimalistic_ setup  
