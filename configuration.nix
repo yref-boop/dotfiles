@@ -141,9 +141,9 @@
     texlab
     nil
     jdt-language-server
-    gleam
+    unstable.gleam
     ocamlPackages.lsp
-    haskellPackages.lsp
+    haskellPackages.haskell-language-server
 
     # image
     hyprpicker
@@ -154,6 +154,7 @@
     calibre
 
     # data management
+    gparted
     libarchive
     kiwix
     gallery-dl
