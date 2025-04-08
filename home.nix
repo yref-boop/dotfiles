@@ -98,7 +98,7 @@
             height = 1080;
             refresh = 120.003;
           };
-          # scale = 1;
+          scale = 1;
           # transform = flipped;
           # position = {
           #   x = 0;
