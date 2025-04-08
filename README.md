@@ -25,3 +25,7 @@ i really like trying out new software, so breaking changes are to be expected
 &nbsp;(&nbsp; ˶•༝•)&nbsp; &nbsp; **system:** rog zephyrus G14 (2020)  
 ୭( づ✿  
 
+
+&nbsp; /)/)&nbsp; &nbsp; &nbsp; (\\(\\  
+(&nbsp; .&nbsp; .)&nbsp; (.&nbsp; .&nbsp; )  
+(&nbsp; &nbsp;づ❆⊂&nbsp; &nbsp;)  
