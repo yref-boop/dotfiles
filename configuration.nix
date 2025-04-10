@@ -7,7 +7,7 @@
 
 {
   imports = [
-    ./laptop-hardware.nix  # hardware scan
+    ./hardware.nix  # hardware scan
   ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs = {
