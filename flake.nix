@@ -43,7 +43,7 @@
       };
     };
     homeConfigurations = {
-      yref-boop = home-manager.lib.homeManagerConfiguration {
+      iago = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
           niri.homeModules.niri

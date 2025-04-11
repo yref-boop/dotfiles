@@ -90,9 +90,9 @@
   };
 
   # user account (password set with ‘passwd’)
-  users.users.yref-boop= {
+  users.users.iago= {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "audio" ];
     packages = with pkgs; [
       tree
     ];
@@ -116,6 +116,9 @@
 
     alacritty
 
+    home-manager
+    xwayland-satellite
+
     fastfetch
     hyfetch
 
@@ -130,6 +133,7 @@
     zathura
 
     texlive.combined.scheme-full
+    prismlauncher
 
     telegram-desktop
 

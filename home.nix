@@ -3,8 +3,8 @@
 
 {
   # necessary info
-  home.username = "yref-boop";
-  home.homeDirectory = "/home/yref-boop";
+  home.username = "iago";
+  home.homeDirectory = "/home/iago";
 
   # first verison of NixOs installed, (!!) not to be changed (!!)
   home.stateVersion = "24.11";
@@ -91,20 +91,6 @@
           #   y = 0;
           #};
         };
-        "eDP-1" = {
-          # off = true;
-          mode = {
-            width = 1920;
-            height = 1080;
-            refresh = 120.003;
-          };
-          scale = 1;
-          # transform = flipped;
-          # position = {
-          #   x = 0;
-          #   y = 0;
-          #};
-        };
       };
 
       layout = {
@@ -179,7 +165,7 @@
       };
 
       spawn-at-startup = [
-         { command = ["swww-daemon"]; }
+         { command = ["swww-daemon" ]; }
       ];
 
       screenshot-path = "~/mídia/capturas/%Y-%m-%d-%H-%M-%S.png";
