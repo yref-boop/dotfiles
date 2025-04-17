@@ -22,16 +22,24 @@
   # nvidia configuration
   hardware.graphics = {
     enable = true;
+    enable32Bit = true;
   };
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
     powerManagement.finegrained = false;
-    open = false;
+    open = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
+  };
+
+  hardware.steam-hardware.enable = true;
 
   # systemd-boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -106,6 +114,17 @@
   programs.firefox.enable = true;
   programs.tmux.enable = true;
 
+  programs.steam = {
+    enable = true;
+
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
+
+
+
+
   # package management (search: $ nix search wget)
   environment.systemPackages = with pkgs; [
 
@@ -164,6 +183,12 @@
     gallery-dl
     yt-dlp
     yazi
+
+    pango
+    libthai
+    harfbuzz
+
+    wine
   ];
 
   # first verison of NixOs installed, (!!) not to be changed (!!)

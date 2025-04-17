@@ -166,6 +166,7 @@
 
       spawn-at-startup = [
          { command = ["swww-daemon" ]; }
+         { command = ["xwayland-satellite" ]; }
       ];
 
       screenshot-path = "~/mídia/capturas/%Y-%m-%d-%H-%M-%S.png";
@@ -232,7 +233,7 @@
         NIXOS_OZONE_WL = "1";
         QT_QPA_PLATFORM = "wayland;xcb";
         QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-        SDL_VIDEODRIVER = "wayland";
+        SDL_VIDEODRIVER = "x11";
         TERM = "kitty";
         TERMINAL = "kitty";
       };
