@@ -1,6 +1,6 @@
 ## dotfiles
 <div align="center">
-<img src="https://github.com/yref-boop/dotfiles/blob/main/media/nix-rainbow.svg">
+<img src="https://github.com/yref-boop/dotfiles/blob/main/media/nix-rainbow.svg" alt="Rainbow NixOS logo" width= "50%" height= "50%">
 
 
 this repo stores all configuration files of my linux system!
