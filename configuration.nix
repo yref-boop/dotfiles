@@ -7,7 +7,7 @@
 
 {
   imports = [
-    ./laptop-hardware.nix  # hardware scan
+    ./hardware.nix  # hardware scan
   ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs = {
@@ -63,7 +63,6 @@
   #   allowedTCPPorts = [ ... ];
   #   allowedUDPPorts = [ ... ];
   # };
-  # networking.firewall.allowedTCPPorts = [1717];
   # networking.firewall.enable = false;
 
   # internationalisation
@@ -151,7 +150,7 @@
     ocamlPackages.lsp
     haskellPackages.haskell-language-server
 
-    texlive.combined.scheme-full # system-wide instalation for correct behaviour when compiling
+    texlive.combined.scheme-full # system-wide for correct behaviour when compiling
 
     xwayland-satellite # x11 compatibility
 
@@ -201,14 +200,11 @@
 
     tor-browser-bundle-bin
 
-
     glib
-    #openrgb 
-
 
     # multimedia
     gparted       # partition
-    libarchive 
+    libarchive
     kiwix         # archives
     gallery-dl
     yazi          # files
