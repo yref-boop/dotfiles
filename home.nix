@@ -166,6 +166,7 @@
 
       spawn-at-startup = [
          { command = ["swww-daemon" ]; }
+         { command = ["dunst" ]; }
          { command = ["xwayland-satellite" ]; }
       ];
 
@@ -410,7 +411,7 @@
     kitty = {
       enable = true;
       settings = {
-        background_opacity = "0.8";
+        background_opacity = "0.9";
         font_family = "Maple Mono";
         font_size = "12.5";
         disable_ligatures = "never";
