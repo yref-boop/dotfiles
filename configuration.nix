@@ -14,10 +14,19 @@
     config.allowUnfree = true;
   };
 
+  # hardware rgb controls
+  services.hardware.openrgb.enable = true;
+
   # auto-mount external drives
   services.devmon.enable = true;
   services.gvfs.enable = true;
   services.udisks2.enable = true;
+
+  # mount IOS
+  services.usbmuxd = {
+    enable = true;
+    package = pkgs.usbmuxd2;
+  };
 
   # nvidia configuration
   hardware.graphics = {
@@ -34,11 +43,7 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  hardware.opengl = {
-    enable = true;
-    driSupport32Bit = true;
-  };
-
+  # steam config
   hardware.steam-hardware.enable = true;
 
   # systemd-boot loader.
@@ -51,14 +56,14 @@
     networkmanager.enable = true;
   };
 
+  # networking config
   # ssh daemon.
   # services.openssh.enable = true;
-
-  # firewall
   # networking.firewall = {
   #   allowedTCPPorts = [ ... ];
   #   allowedUDPPorts = [ ... ];
   # };
+  # networking.firewall.allowedTCPPorts = [1717];
   # networking.firewall.enable = false;
 
   # internationalisation
@@ -69,25 +74,14 @@
     LC_ALL = "pt_PT.UTF-8";
   };
   i18n.supportedLocales = [ "all" ];
-
   console = {
     keyMap = "pt-latin1";
-  };
-
-  # windowing system
-  programs.niri = {
-    enable = true;
-  };
-
-  environment.sessionVariables = {
-    WL_NO_HARDWARE_CURSORS = "1";
-    NIXOS_OZONE_WL = "1";
   };
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals =[ pkgs.xdg-desktop-portal-gtk ];
 
-  # sound
+  # sound configuration
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -97,68 +91,57 @@
     jack.enable = true;
   };
 
+  # bluetooth configuration
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+  services.blueman.enable = true;
+
   # user account (password set with ‘passwd’)
   users.users.iago= {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" ];
+    extraGroups = [ "wheel" "audio" "adbusers" ];
     packages = with pkgs; [
       tree
     ];
   };
 
-  fonts.packages = [ ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.unstable.maple-mono);
+  # external fonts
+  fonts.packages = with pkgs; []++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.unstable.maple-mono)++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   # touchpad
   services.libinput.enable = true;
 
+  # windowing system
+  programs.niri = {
+    enable = true;
+  };
+
+  # programs & services
   programs.firefox.enable = true;
   programs.tmux.enable = true;
-
   programs.steam = {
     enable = true;
-
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
-
-
-
+  programs.adb.enable = true;
+  services.tor.enable = true;
 
   # package management (search: $ nix search wget)
   environment.systemPackages = with pkgs; [
 
+    home-manager # ricing manager
+
+    # terminal
     neovim
     kitty
     wget
     git
 
-    alacritty
-
-    home-manager
-    xwayland-satellite
-
-    fastfetch
-    hyfetch
-
-    ripgrep
-
-    mako
-    libnotify
-    swww
-    wofi
-    starship
-    wl-clipboard
-    zathura
-
-    texlive.combined.scheme-full
-    prismlauncher
-
-    telegram-desktop
-
-    swww
-
-    # lsps
+    # compilers (for lsps)
     python314
     clang-tools
     texlab
@@ -168,27 +151,93 @@
     ocamlPackages.lsp
     haskellPackages.haskell-language-server
 
+    texlive.combined.scheme-full # system-wide instalation for correct behaviour when compiling
+
+    xwayland-satellite # x11 compatibility
+
+    # system info
+    fastfetch # general
+    inxi      # hardware
+
+    mako          # notifications
+    dunst         # notification daemon
+    libnotify 
+    swww          # background
+    wofi          # launcher program
+    starship      # terminal personalization
+    wl-clipboard  # clipboard
+    ripgrep
+
     # image
     hyprpicker
     hyprshade
     hyprshot
     inkscape
     imagemagick
-    calibre
 
-    # data management
-    gparted
-    libarchive
-    kiwix
-    gallery-dl
-    yt-dlp
-    yazi
-
+    # international font support
     pango
     libthai
     harfbuzz
 
-    wine
+    # usb management
+    usbutils
+    udiskie
+    udisks
+    libimobiledevice
+    ifuse # optional, to mount using 'ifuse'
+
+    blueman # bluetooth
+
+    # windows compatibility
+    wineWowPackages.stable      # both 32 & 64-bit support
+    wine                        # 32-bit support only
+    (wine.override { wineBuild = "wine64"; }) # 64-bit support only
+    wine64
+    wineWowPackages.staging     # experimental features
+    winetricks                  # (all versions)
+    wineWowPackages.waylandFull # native wayland support (unstable)
+    wineWowPackages.full
+
+    tor-browser-bundle-bin
+
+
+    glib
+    #openrgb 
+
+
+    # multimedia
+    gparted       # partition
+    libarchive 
+    kiwix         # archives
+    gallery-dl
+    yazi          # files
+
+    unstable.yt-dlp # media download
+    calibre         # books
+    qgis            # FOSS maps
+    libwacom        # touch tablet
+    wacomtablet
+    mpv             # video
+    tageditor       # music
+    amberol
+    fontforge       # font editor
+    zathura       # pdf viewer
+
+    obs-studio
+    (pkgs.wrapOBS{
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+      ];
+    })
+
+    # social
+    telegram-desktop
+    teams-for-linux
+    discord
+
+    prismlauncher # minecraft
+
   ];
 
   # first verison of NixOs installed, (!!) not to be changed (!!)
