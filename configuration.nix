@@ -7,7 +7,7 @@
 
 {
   imports = [
-    ./hardware.nix  # hardware scan
+    ./hardware-desktop.nix  # hardware scan
   ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs = {
@@ -107,7 +107,7 @@
   };
 
   # external fonts
-  fonts.packages = with pkgs; []++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.unstable.maple-mono)++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+  fonts.packages = with pkgs; []++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.unstable.maple-mono)++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.atkinson-hyperlegible-next);
 
   # touchpad
   services.libinput.enable = true;
@@ -198,7 +198,7 @@
     wineWowPackages.waylandFull # native wayland support (unstable)
     wineWowPackages.full
 
-    tor-browser-bundle-bin
+    tor-browser
 
     glib
 
@@ -213,7 +213,6 @@
     calibre         # books
     qgis            # FOSS maps
     libwacom        # touch tablet
-    wacomtablet
     mpv             # video
     tageditor       # music
     amberol
@@ -233,6 +232,7 @@
     discord
 
     prismlauncher # minecraft
+
 
   ];
 
