@@ -1,0 +1,12 @@
+flake.nix
+hosts/
+  laptop/
+    configuration.nix
+    hardware.nix
+    home.nix
+  desktop/
+    configuration.nix
+    hardware.nix
+    home.nix
+nixos-modules/
+home-modules/
