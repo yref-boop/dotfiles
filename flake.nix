@@ -27,7 +27,7 @@
       };
     in {
     nixosConfigurations = {
-      nixos = lib.nixosSystem {
+      desktop = lib.nixosSystem {
         inherit system;
         modules = [
           # overlays-module for "pkgs.unstable" availability
@@ -38,7 +38,7 @@
           programs.niri.package = pkgs.niri-unstable;
           })
           niri.nixosModules.niri
-          ./configuration.nix
+          ./hosts/desktop/configuration.nix
         ];
       };
     };
