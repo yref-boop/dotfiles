@@ -41,6 +41,20 @@
           ./hosts/desktop/configuration.nix
         ];
       };
+      laptop = lib.nixosSystem {
+        inherit system;
+        modules = [
+          # overlays-module for "pkgs.unstable" availability
+          ({ config, pkgs, ... }: { nixpkgs.overlays = [
+              overlay-unstable
+              niri.overlays.niri
+            ];
+          programs.niri.package = pkgs.niri-unstable;
+          })
+          niri.nixosModules.niri
+          ./hosts/laptop/configuration.nix
+        ];
+      };
     };
     homeConfigurations = {
       iago = home-manager.lib.homeManagerConfiguration {
