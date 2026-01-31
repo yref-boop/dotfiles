@@ -8,6 +8,7 @@
 {
   imports = [
     ./hardware-desktop.nix  # hardware scan
+    ./module.nix
   ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs = {
@@ -154,9 +155,6 @@
 
     xwayland-satellite # x11 compatibility
 
-    # system info
-    fastfetch # general
-    inxi      # hardware
 
     mako          # notifications
     dunst         # notification daemon
