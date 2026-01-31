@@ -60,11 +60,17 @@
         };
       };
       homeConfigurations = {
-        iago = home-manager.lib.homeManagerConfiguration {
+        "iago@desktop" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
             niri.homeModules.niri
-            ./home.nix ];
+            ./hosts/desktop/home.nix ];
+        };
+        "iago@laptop" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            niri.homeModules.niri
+            ./hosts/laptop/home.nix ];
         };
       };
     };
