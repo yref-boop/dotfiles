@@ -15,6 +15,8 @@
     config.allowUnfree = true;
   };
 
+  module1.enable = false;
+
   # hardware rgb controls
   services.hardware.openrgb.enable = true;
 
