@@ -11,6 +11,7 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,44 +27,46 @@
         unstable = nixpkgs-unstable.legacyPackages.${prev.system};
       };
     in {
-    nixosConfigurations = {
-      desktop = lib.nixosSystem {
-        inherit system;
-        modules = [
-          # overlays-module for "pkgs.unstable" availability
-          ({ config, pkgs, ... }: { nixpkgs.overlays = [
-              overlay-unstable
-              niri.overlays.niri
-            ];
-          programs.niri.package = pkgs.niri-unstable;
-          })
-          niri.nixosModules.niri
-          ./hosts/desktop/configuration.nix
-        ];
+      nixosConfigurations = {
+        desktop = lib.nixosSystem {
+          inherit system;
+          modules = [
+            # overlays-module for "pkgs.unstable" availability
+            ({ config, pkgs, ... }: {
+              nixpkgs.overlays = [
+                overlay-unstable
+                niri.overlays.niri
+              ];
+              programs.niri.package = pkgs.niri-unstable;
+            })
+            niri.nixosModules.niri
+            ./hosts/desktop/configuration.nix
+          ];
+        };
+        laptop = lib.nixosSystem {
+          inherit system;
+          modules = [
+            # overlays-module for "pkgs.unstable" availability
+            ({ config, pkgs, ... }: {
+              nixpkgs.overlays = [
+                overlay-unstable
+                niri.overlays.niri
+              ];
+              programs.niri.package = pkgs.niri-unstable;
+            })
+            niri.nixosModules.niri
+            ./hosts/laptop/configuration.nix
+          ];
+        };
       };
-      laptop = lib.nixosSystem {
-        inherit system;
-        modules = [
-          # overlays-module for "pkgs.unstable" availability
-          ({ config, pkgs, ... }: { nixpkgs.overlays = [
-              overlay-unstable
-              niri.overlays.niri
-            ];
-          programs.niri.package = pkgs.niri-unstable;
-          })
-          niri.nixosModules.niri
-          ./hosts/laptop/configuration.nix
-        ];
+      homeConfigurations = {
+        iago = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            niri.homeModules.niri
+            ./home.nix ];
+        };
       };
     };
-    homeConfigurations = {
-      iago = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          niri.homeModules.niri
-          ./home.nix ];
-      };
-    };
-  };
 
 }
