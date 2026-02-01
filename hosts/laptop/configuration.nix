@@ -128,6 +128,8 @@
     wl-clipboard  # clipboard
     ripgrep
     brightnessctl
+    gcc
+    clang-tools
     swww
     telegram-desktop
   ];
