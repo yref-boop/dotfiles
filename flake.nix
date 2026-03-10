@@ -64,13 +64,15 @@
           inherit pkgs;
           modules = [
             niri.homeModules.niri
-            ./hosts/desktop/home.nix ];
+            ./hosts/desktop/home.nix
+          ];
         };
         "iago@laptop" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
             niri.homeModules.niri
-            ./hosts/laptop/home.nix ];
+            ./hosts/laptop/home.nix
+          ];
         };
       };
     };
