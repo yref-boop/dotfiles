@@ -762,14 +762,14 @@
             plugin = nvim-lspconfig;
             type = "lua";
             config = ''
-              require'lspconfig'.pyright.setup{}
-              require'lspconfig'.clangd.setup{}
-              require'lspconfig'.texlab.setup{}
-              require'lspconfig'.nil_ls.setup{}
-              require'lspconfig'.jdtls.setup{}
-              require'lspconfig'.gleam.setup{}
-              require'lspconfig'.hls.setup{}
-              require'lspconfig'.ocamllsp.setup{}
+              vim.lsp.enable('pyright')
+              vim.lsp.enable('clangd')
+              vim.lsp.enable('texlab')
+              vim.lsp.enable('nil_ls')
+              vim.lsp.enable('jdtls')
+              vim.lsp.enable('gleam')
+              vim.lsp.enable('hls')
+              vim.lsp.enable('ocamllsp')
 
               -- lsp keybinds
               vim.api.nvim_create_autocmd('LspAttach', {
