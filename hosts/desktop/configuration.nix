@@ -55,7 +55,7 @@
 
   # network
   networking = {
-    hostName = "nixos";
+    hostName = "desktop";
     networkmanager.enable = true;
   };
 
@@ -187,6 +187,7 @@
     ifuse # optional, to mount using 'ifuse'
 
     blueman # bluetooth
+    bluez-tools
 
     # windows compatibility
     wineWowPackages.stable      # both 32 & 64-bit support
@@ -209,7 +210,7 @@
     gallery-dl
     yazi          # files
 
-    unstable.yt-dlp # media download
+    yt-dlp # media download
     calibre         # books
     qgis            # FOSS maps
     libwacom        # touch tablet
@@ -228,11 +229,13 @@
 
     # social
     telegram-desktop
+    signal-desktop
     teams-for-linux
-    discord
 
     prismlauncher # minecraft
 
+    inotify-tools
+    ffmpeg-full
 
   ];
 
